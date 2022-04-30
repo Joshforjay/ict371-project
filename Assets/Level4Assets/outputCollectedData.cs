@@ -1,0 +1,64 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+using System.IO;
+
+public class outputCollectedData : MonoBehaviour
+{
+    public void outputData(string path, level4Scores l4)
+    {
+        l4.baseScores.numCollected = l4.correctMatches + l4.numberEscaped + l4.incorrectMatches;
+
+        char ranking = 'F';
+        float score = l4.baseScores.score;
+        if (score < 2.5)
+        {
+            ranking = 'F';
+        }
+        else if (score < 4)
+        {
+            ranking = 'D';
+        }
+        else if (score < 6)
+        {
+            ranking = 'C';
+        }
+        else if (score < 9)
+        {
+            ranking = 'B';
+        }
+        else if (score < 12)
+        {
+            ranking = 'A';
+        }
+        else
+        {
+            ranking = 'S';
+        }
+
+
+        l4.incorrectMatches /= 2;
+        l4.correctMatches /= 2;
+        l4.baseScores.grade = ranking;
+        l4.baseScores.difficulty = PlayerPrefs.GetInt("difficulty");
+
+        string file = Application.persistentDataPath + "/" + path;
+        StreamWriter writer = new StreamWriter(file, true);
+
+        writer.WriteLine("\n\n--Level 4 data--");
+        writer.WriteLine("Completed on: " + System.DateTime.Now.ToString());
+        writer.WriteLine("Difficulty: " + l4.baseScores.difficulty.ToString());
+        writer.WriteLine("Overall score: " + l4.baseScores.score.ToString());
+        writer.WriteLine("Overall time: " + l4.baseScores.time.ToString());
+        writer.WriteLine("Ranking: " + l4.baseScores.grade.ToString());
+        writer.WriteLine("Overall collected: " + l4.baseScores.numCollected.ToString());
+        writer.WriteLine("Correct matches: " + l4.correctMatches.ToString());
+        writer.WriteLine("Incorrect matches: " + l4.incorrectMatches.ToString());
+        writer.WriteLine("Number escaped: " + l4.numberEscaped.ToString());
+
+        Debug.Log(Application.persistentDataPath);
+
+        writer.Close();
+    }
+}

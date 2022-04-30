@@ -1,0 +1,16 @@
+{
+    "name": "Level3Scripts",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6000911826e84e24fbb41610b54f288f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
