@@ -43,7 +43,6 @@ public class SceneController : MonoBehaviour {
 
     public GameObject scoreMenu, levelSelector;
     public GameObject scoreFirstButton, levelSelectorFirstButton;
-
     public levelScores Scores { get; }
 
     void Start() {
