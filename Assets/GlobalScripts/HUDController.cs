@@ -91,12 +91,12 @@ public class HUDController : MonoBehaviour
 
     public void set_TLitem_2_number(float num)
     {
-        TLitem2Num = num;
+        TLitem2Num = Mathf.Round(num * 1000f) / 1000f;
     }
 
     public void set_TLitem_1_number(float num)
     {
-        TLitem1Num = num;
+        TLitem1Num = Mathf.Round(num * 100f) / 100f;
     }
 
     public void set_TL_active(bool val)

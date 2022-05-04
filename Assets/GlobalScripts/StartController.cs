@@ -9,7 +9,7 @@ public class StartController : MonoBehaviour
     public GameObject[] firstButtonOnSlides;
     [SerializeField]
     private int currentActive = 0;
-
+    private bool hidden = false;
 
     // Start is called before the first frame update
     void Start()
@@ -69,12 +69,14 @@ public class StartController : MonoBehaviour
     public void hide_slides()
     {
         slides[currentActive].SetActive(false);
+        hidden = true;
     }
 
     public void show_slides()
     {
         slides[currentActive].SetActive(true);
         set_first_button_active();
+        hidden = false;
     }
 
     public void set_active_slide(int slideNumber)
@@ -92,5 +94,10 @@ public class StartController : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(firstButtonOnSlides[currentActive]);
+    }
+
+    public bool is_active()
+    {
+        return hidden;
     }
 }

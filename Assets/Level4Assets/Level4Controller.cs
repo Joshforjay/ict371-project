@@ -15,7 +15,6 @@ public class Level4Controller : MonoBehaviour
     public float levelTimeLimit = 60;
     public GamepadCursor gpc;
 
-    static private float playerScore = 0;
     static private float oldTime = 0;
     static public List<GameObject> currentlyCreatedObjects = new List<GameObject>();
     static private List<float> timeOfCreation = new List<float>();
@@ -25,6 +24,11 @@ public class Level4Controller : MonoBehaviour
     private int lastSide = 10;
     private bool end = false;
     static private level4Scores l4;
+
+    [SerializeField]
+    private GameObject HUD;
+    [SerializeField]
+    private GameObject StartOBJ;
 
     // Start is called before the first frame update
     void Start()
@@ -38,12 +42,27 @@ public class Level4Controller : MonoBehaviour
         l4.baseScores.numCollected = 0;
         l4.baseScores.score = 0;
         l4.baseScores.time = levelTimeLimit;
+
+        HUD.SetActive(false);
+        StartOBJ.SetActive(true);
+
+        
+        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Time.time - startTime > levelTimeLimit)
+        StartController start = StartOBJ.transform.GetChild(0).GetComponent<StartController>();
+        if(!start.is_active())
+        {
+            return;
+        }
+        
+        hud_update();
+
+        if (Time.time - startTime > levelTimeLimit)
         {
             if (!end)
             {
@@ -54,9 +73,9 @@ public class Level4Controller : MonoBehaviour
                 }
                 sceneController.ShowScoreMenu();
                 scoreFinishing();
-                
+
             }
-            
+
         }
         else if (oldTime < Time.time - timeBetweenSpawning && countObjects < maxSpawned)
         {
@@ -64,7 +83,23 @@ public class Level4Controller : MonoBehaviour
             createNewObject();
         }
 
-        if(!end) { checkExistingObjects(); }
+        if (!end) { checkExistingObjects(); }
+        
+    }
+
+    private void hud_update()
+    {
+        if (!HUD.activeSelf)
+        {
+            startTime = Time.time;
+            HUD.SetActive(true);
+        }
+
+        HUDController hud = HUD.transform.GetChild(0).GetComponent<HUDController>();
+        hud.set_TLitem_1_number(l4.baseScores.score);
+        float timeLeft = levelTimeLimit - (Time.time - startTime);
+        if(timeLeft < 0) { timeLeft = 0; }
+        hud.set_TLitem_2_number(timeLeft);
     }
 
     void createNewObject()
