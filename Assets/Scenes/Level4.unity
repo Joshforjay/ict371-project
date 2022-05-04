@@ -1229,6 +1229,7 @@ MonoBehaviour:
   gpc: {fileID: 213283097}
   HUD: {fileID: 544065539}
   StartOBJ: {fileID: 682410321}
+  CursorRender: {fileID: 647206585}
 --- !u!4 &830684288
 Transform:
   m_ObjectHideFlags: 0
@@ -2263,6 +2264,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814965843}
   m_CullTransparentMesh: 1
+--- !u!1 &1878763087 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2882101664767164040, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
+  m_PrefabInstance: {fileID: 1968151179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1968151179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2273,11 +2279,11 @@ PrefabInstance:
     - target: {fileID: 1126508945061779148, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: scoreFirstButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2028624406}
     - target: {fileID: 1126508945061779148, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: levelSelectorFirstButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1878763087}
     - target: {fileID: 3136170698341866737, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2534,6 +2540,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004879127}
   m_CullTransparentMesh: 1
+--- !u!1 &2028624406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6027627270857354356, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
+  m_PrefabInstance: {fileID: 1968151179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2038373182
 GameObject:
   m_ObjectHideFlags: 0

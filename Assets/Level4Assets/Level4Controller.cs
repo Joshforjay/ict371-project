@@ -29,6 +29,8 @@ public class Level4Controller : MonoBehaviour
     private GameObject HUD;
     [SerializeField]
     private GameObject StartOBJ;
+    [SerializeField]
+    private GameObject CursorRender;
 
     // Start is called before the first frame update
     void Start()
@@ -46,8 +48,9 @@ public class Level4Controller : MonoBehaviour
         HUD.SetActive(false);
         StartOBJ.SetActive(true);
 
-        
-        
+        CursorRender.SetActive(false);
+
+
 
     }
 
@@ -73,6 +76,7 @@ public class Level4Controller : MonoBehaviour
                 }
                 sceneController.ShowScoreMenu();
                 scoreFinishing();
+                CursorRender.SetActive(false);
 
             }
 
@@ -93,6 +97,7 @@ public class Level4Controller : MonoBehaviour
         {
             startTime = Time.time;
             HUD.SetActive(true);
+            CursorRender.SetActive(true);
         }
 
         HUDController hud = HUD.transform.GetChild(0).GetComponent<HUDController>();
