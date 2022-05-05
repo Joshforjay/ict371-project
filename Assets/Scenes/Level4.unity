@@ -1230,6 +1230,7 @@ MonoBehaviour:
   HUD: {fileID: 544065539}
   StartOBJ: {fileID: 682410321}
   CursorRender: {fileID: 647206585}
+  sc: {fileID: 1672451116}
 --- !u!4 &830684288
 Transform:
   m_ObjectHideFlags: 0
@@ -2189,6 +2190,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1672451116 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3220524191951857297, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
+  m_PrefabInstance: {fileID: 1968151179}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabbe8c5eee346b439afb64ed7ce899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1814965843
 GameObject:
   m_ObjectHideFlags: 0
