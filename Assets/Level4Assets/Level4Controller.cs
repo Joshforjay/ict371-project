@@ -31,6 +31,8 @@ public class Level4Controller : MonoBehaviour
     private GameObject StartOBJ;
     [SerializeField]
     private GameObject CursorRender;
+    [SerializeField]
+    private ScoreController sc;
 
     // Start is called before the first frame update
     void Start()
@@ -70,12 +72,15 @@ public class Level4Controller : MonoBehaviour
             if (!end)
             {
                 end = true;
-                for (int count = 0; count < currentlyCreatedObjects.Count; count++)
-                {
-                    Destroy(currentlyCreatedObjects[count]);
-                }
-                sceneController.ShowScoreMenu();
+                currentlyCreatedObjects.Clear();
+                countObjects = 0;
+                
                 scoreFinishing();
+
+                sc.set_rank_value(l4.baseScores.grade);
+                sc.set_score_value(l4.baseScores.score);
+                sceneController.ShowScoreMenu();
+
                 CursorRender.SetActive(false);
 
             }
@@ -331,8 +336,41 @@ public class Level4Controller : MonoBehaviour
 
     private void scoreFinishing()
     {
+        determine_ranking();
         outputCollectedData oCD = new outputCollectedData();
         oCD.outputData("level4Data.txt", l4);
+    }
+
+    private void determine_ranking()
+    {
+        char ranking = 'F';
+        float score = l4.baseScores.score;
+        if (score < 2.5)
+        {
+            ranking = 'F';
+        }
+        else if (score < 4)
+        {
+            ranking = 'D';
+        }
+        else if (score < 6)
+        {
+            ranking = 'C';
+        }
+        else if (score < 9)
+        {
+            ranking = 'B';
+        }
+        else if (score < 12)
+        {
+            ranking = 'A';
+        }
+        else
+        {
+            ranking = 'S';
+        }
+
+        l4.baseScores.grade = ranking;
     }
 
 }

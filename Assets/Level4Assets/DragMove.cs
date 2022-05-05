@@ -20,6 +20,7 @@ public class DragMove : MonoBehaviour
     {
         //Debug.Log("update");
         Mouse virtualMouse = gamepadCursor.getMouse();
+        if(Gamepad.current == null) { return; }
         if (Gamepad.current.aButton.IsPressed())
         {
             controllerUsed = true;

@@ -10,37 +10,8 @@ public class outputCollectedData : MonoBehaviour
     {
         l4.baseScores.numCollected = l4.correctMatches + l4.numberEscaped + l4.incorrectMatches;
 
-        char ranking = 'F';
-        float score = l4.baseScores.score;
-        if (score < 2.5)
-        {
-            ranking = 'F';
-        }
-        else if (score < 4)
-        {
-            ranking = 'D';
-        }
-        else if (score < 6)
-        {
-            ranking = 'C';
-        }
-        else if (score < 9)
-        {
-            ranking = 'B';
-        }
-        else if (score < 12)
-        {
-            ranking = 'A';
-        }
-        else
-        {
-            ranking = 'S';
-        }
-
-
         l4.incorrectMatches /= 2;
         l4.correctMatches /= 2;
-        l4.baseScores.grade = ranking;
         l4.baseScores.difficulty = PlayerPrefs.GetInt("difficulty");
 
         string file = Application.persistentDataPath + "/" + path;

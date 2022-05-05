@@ -1225,7 +1225,7 @@ MonoBehaviour:
   timeBetweenSpawning: 1
   maxSpawned: 7
   forceMagnitude: 1
-  levelTimeLimit: 4
+  levelTimeLimit: 30
   gpc: {fileID: 213283097}
   HUD: {fileID: 544065539}
   StartOBJ: {fileID: 682410321}
