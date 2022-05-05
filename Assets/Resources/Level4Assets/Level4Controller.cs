@@ -82,6 +82,7 @@ public class Level4Controller : MonoBehaviour
                 sceneController.ShowScoreMenu();
 
                 CursorRender.SetActive(false);
+                HUD.SetActive(false);
 
             }
 
@@ -98,7 +99,7 @@ public class Level4Controller : MonoBehaviour
 
     private void hud_update()
     {
-        if (!HUD.activeSelf)
+        if (!HUD.activeSelf && !end)
         {
             startTime = Time.time;
             HUD.SetActive(true);
