@@ -24,7 +24,9 @@ public class BCellGeneration : MonoBehaviour {
 		for (int i = 0; i < count; i++) {
 			Transform lastVessel = FindObjectOfType<BloodVesselGeneration>().GetLastVessel();
 
-			Vector3 spawnPos = Random.insideUnitCircle * 5;
+			Vector3 spawnPos;
+			spawnPos.x = Random.Range(-1, 2);
+			spawnPos.y = -1.5f;
 			spawnPos.z = Random.Range(lastVessel.position.z - 10, lastVessel.position.z + 10);
 
 			Instantiate(bCell, spawnPos, Quaternion.identity, lastVessel);

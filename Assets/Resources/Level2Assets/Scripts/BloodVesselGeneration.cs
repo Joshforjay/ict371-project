@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BloodVesselGeneration : MonoBehaviour {
 	[SerializeField]
-	int maxBloodVessels = 5;
+	int maxBloodVessels;
 
 	[SerializeField]
 	GameObject bloodVessel;
@@ -30,13 +30,13 @@ public class BloodVesselGeneration : MonoBehaviour {
 		for (int i = 0; i < count; ++i) {
 			Transform lastVessel = GetLastVessel();
 			float zPos = lastVessel.position.z;
-			float offset = lastVessel.GetChild(0).localScale.z * 2;
+			float offset = lastVessel.GetChild(0).localScale.z * 1.75f;
 
 			Vector3 spawnPos = new Vector3(0, 0, zPos + offset);
 
 			Instantiate(bloodVessel, spawnPos, Quaternion.identity, this.transform);
 
-			OnSpawnVessel(5);
+			OnSpawnVessel(1);
 		}
 	}
 }

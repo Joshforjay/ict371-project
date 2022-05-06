@@ -17,7 +17,7 @@ public class TCellCollision : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {}
 
-	void OnCollisionEnter(Collision collision) {
+	void OnTriggerEnter(Collider collision) {
 		switch (collision.gameObject.tag) {
 			case "BloodVessel":
 				Destroy(gameObject);

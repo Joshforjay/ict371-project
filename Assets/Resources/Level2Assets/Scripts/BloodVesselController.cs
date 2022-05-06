@@ -19,4 +19,8 @@ public class BloodVesselController : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}
+
+	private void FixedUpdate() {
+		moveSpeed += 0.001f;
+	}
 }
