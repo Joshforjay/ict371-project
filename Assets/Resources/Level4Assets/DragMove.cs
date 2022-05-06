@@ -18,6 +18,8 @@ public class DragMove : MonoBehaviour
 
     private void Update()
     {
+        touch_drag_update();
+
         //Debug.Log("update");
         Mouse virtualMouse = gamepadCursor.getMouse();
         if(Gamepad.current == null) { return; }
@@ -37,6 +39,45 @@ public class DragMove : MonoBehaviour
             }
         }
         else { controllerUsed = false; }
+    }
+
+    private void touch_drag_update()
+    {
+        Vector3 mouseDir;
+        Touch touch;
+        Ray ray;
+        RaycastHit hit;
+        GameObject clickedObject;
+
+        for (int count = 0; count < Input.touchCount; count++)
+        {
+            touch = Input.GetTouch(count);
+            ray = Camera.main.ScreenPointToRay(touch.position);
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider != null)
+                {
+                    clickedObject = hit.collider.gameObject;
+                    if (clickedObject.name != "Floor")
+                    {
+                        
+                        float initDist = Vector3.Distance(clickedObject.transform.position, mainCamera.transform.position);
+                        clickedObject.TryGetComponent<Rigidbody>(out var rb);
+
+                        mouseDir = ray.GetPoint(initDist) - clickedObject.transform.position;
+                        mouseDir.y = 0;
+                        clickedObject.transform.position += mouseDir;
+
+                        //Debug.Log("HIT: " + hit.collider.gameObject.name);
+                        //Debug.Log(touch.position);
+                        //hit.collider.gameObject.transform.position = Camera.main.ScreenToViewportPoint(touch.position);
+                    }
+
+                    //StartCoroutine(DragUpdate(hit.collider.gameObject));
+                }
+            }
+        }
+
     }
 
     private void Awake()

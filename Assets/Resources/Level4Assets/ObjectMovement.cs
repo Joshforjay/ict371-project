@@ -34,7 +34,8 @@ public class ObjectMovement : MonoBehaviour
         transform.position = GetMouseAsWorldPoint() + offSet;
     }
     */
-    
+
+
     void OnCollisionEnter(Collision collider)
     {
         if (collider.gameObject.name == "Floor") { return; }

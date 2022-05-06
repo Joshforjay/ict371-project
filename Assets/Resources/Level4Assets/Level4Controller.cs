@@ -103,7 +103,7 @@ public class Level4Controller : MonoBehaviour
         {
             startTime = Time.time;
             HUD.SetActive(true);
-            CursorRender.SetActive(true);
+            //CursorRender.SetActive(true);
         }
 
         HUDController hud = HUD.transform.GetChild(0).GetComponent<HUDController>();
@@ -138,7 +138,7 @@ public class Level4Controller : MonoBehaviour
         //Creates object
         int choosenObject = chooseObjectToCreate();
         GameObject newObject = Instantiate(gameObjects[choosenObject], spawnLoc, Quaternion.identity);
-        newObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+        //newObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
 
         //Set name //i.e. remove (clone)
         int nameEndIndex = newObject.name.IndexOf('(');
