@@ -138,6 +138,7 @@ public class Level4Controller : MonoBehaviour
         //Creates object
         int choosenObject = chooseObjectToCreate();
         GameObject newObject = Instantiate(gameObjects[choosenObject], spawnLoc, Quaternion.identity);
+        newObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
 
         //Set name //i.e. remove (clone)
         int nameEndIndex = newObject.name.IndexOf('(');
