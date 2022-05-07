@@ -275,7 +275,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff524d0328bb3744847acaa0c703e96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnCount: 1
   bCell: {fileID: 5921585821569188157, guid: 5921a6e39a1772048bf4f3a876be4e22, type: 3}
+  covid: {fileID: 2003846072507610677, guid: 704ba2317c2247e488fc757ceebae5b0, type: 3}
 --- !u!1 &367250198
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,6 +1192,10 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 814476653507905790, guid: 6adc06feae8950346be7fa99bde37ca0, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 814476653601803300, guid: 6adc06feae8950346be7fa99bde37ca0, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1239,8 +1245,36 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3164989496605887381, guid: 6adc06feae8950346be7fa99bde37ca0, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3164989496605887381, guid: 6adc06feae8950346be7fa99bde37ca0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3164989496605887381, guid: 6adc06feae8950346be7fa99bde37ca0, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3164989496605887381, guid: 6adc06feae8950346be7fa99bde37ca0, type: 3}
       propertyPath: m_Lightmapping
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3164989496605887381, guid: 6adc06feae8950346be7fa99bde37ca0, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 2.62e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 3164989496605887381, guid: 6adc06feae8950346be7fa99bde37ca0, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 6e-45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3164989496605887381, guid: 6adc06feae8950346be7fa99bde37ca0, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: -6.133618e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3164989496605887381, guid: 6adc06feae8950346be7fa99bde37ca0, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 1.008e-42
       objectReference: {fileID: 0}
     - target: {fileID: 3559667276829640207, guid: 6adc06feae8950346be7fa99bde37ca0, type: 3}
       propertyPath: m_Type
