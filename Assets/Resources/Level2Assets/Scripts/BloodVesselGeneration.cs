@@ -30,9 +30,8 @@ public class BloodVesselGeneration : MonoBehaviour {
 		for (int i = 0; i < count; ++i) {
 			Transform lastVessel = GetLastVessel();
 			float zPos = lastVessel.position.z;
-			float offset = lastVessel.GetChild(0).localScale.z * 1.75f;
 
-			Vector3 spawnPos = new Vector3(0, 0, zPos + offset);
+			Vector3 spawnPos = new Vector3(0, 0, zPos + 20.0f);
 
 			Instantiate(bloodVessel, spawnPos, Quaternion.identity, this.transform);
 
