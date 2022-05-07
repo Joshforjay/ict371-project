@@ -4183,7 +4183,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 1.2, z: 2.33}
+  m_Size: {x: 0.8, y: 1.2, z: 2.33}
   m_Center: {x: 0, y: -0.22, z: 0.85}
 --- !u!1001 &725898845
 PrefabInstance:
@@ -9456,7 +9456,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 1.2, z: 2.34}
+  m_Size: {x: 0.8, y: 1.2, z: 2.34}
   m_Center: {x: 0, y: -0.22, z: 0.85}
 --- !u!1 &1752734875
 GameObject:
