@@ -1191,10 +1191,10 @@ MonoBehaviour:
   centerPointOfSpawn: {fileID: 1126725949}
   zDistTillOutOfView: 11
   xDistTillOutOfView: 7
-  timeBetweenSpawning: 1.5
+  timeBetweenSpawning: 2.5
   maxSpawned: 12
   forceMagnitude: 1
-  levelTimeLimit: 20
+  levelTimeLimit: 60
   gpc: {fileID: 213283097}
   HUD: {fileID: 544065539}
   StartOBJ: {fileID: 682410321}
@@ -2576,6 +2576,18 @@ PrefabInstance:
       propertyPath: m_TrackedDeviceOrientationAction
       value: 
       objectReference: {fileID: 265115314024071258, guid: ecbf4a52648355349aaf769fd229d17b, type: 3}
+    - target: {fileID: 4300094807472364495, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300094807472364495, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300094807472364495, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 5004635055225412670, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: m_IsActive
       value: 1
