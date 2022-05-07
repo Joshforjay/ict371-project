@@ -19,7 +19,7 @@ public class TCellCollision : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collision) {
 		switch (collision.gameObject.tag) {
-			case "BloodVessel":
+			case "Covid":
 				Destroy(gameObject);
 				OnDead();
 				sc.ShowScoreMenu();

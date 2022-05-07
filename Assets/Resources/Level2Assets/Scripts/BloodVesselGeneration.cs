@@ -9,7 +9,7 @@ public class BloodVesselGeneration : MonoBehaviour {
 	[SerializeField]
 	GameObject bloodVessel;
 
-	public delegate void SpawnAction(int count);
+	public delegate void SpawnAction();
 	public static event SpawnAction OnSpawnVessel;
 
 	// Start is called before the first frame update
@@ -36,7 +36,7 @@ public class BloodVesselGeneration : MonoBehaviour {
 
 			Instantiate(bloodVessel, spawnPos, Quaternion.identity, this.transform);
 
-			OnSpawnVessel(1);
+			OnSpawnVessel();
 		}
 	}
 }

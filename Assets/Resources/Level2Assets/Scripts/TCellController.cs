@@ -48,7 +48,7 @@ public class TCellController : MonoBehaviour {
 	}
 
 	void Update() {
-		Vector3 destination = new Vector3(positions_[positionIndex_], -1.5f, 0);
+		Vector3 destination = new Vector3(positions_[positionIndex_], -1.5f, 0.0f);
 
 		Rigidbody rb = GetComponent<Rigidbody>();
 

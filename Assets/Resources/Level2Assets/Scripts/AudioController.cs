@@ -10,7 +10,10 @@ public class AudioController : MonoBehaviour {
 
 	// Start is called before the first frame update
 	void Start() {
+		pickupSfxSrc_.volume = 0.5f;
+
 		musicSrc_.loop = true;
+		musicSrc_.volume = 0.5f;
 		musicSrc_.Play();
 	}
 
