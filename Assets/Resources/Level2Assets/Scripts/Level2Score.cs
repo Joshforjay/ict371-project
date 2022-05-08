@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+using System.IO;
+
 public class Level2Score : MonoBehaviour {
-	public static uint score;
+	public static int score;
 	public static float timeElapsed;
 
 	[SerializeField]
@@ -13,6 +15,12 @@ public class Level2Score : MonoBehaviour {
 	[SerializeField]
 	TMP_Text _bCellText;
 
+	[SerializeField]
+	ScoreController _scoreController;
+
+	bool _isDeadState = false;
+	baseScores _level2Score;
+
 	// Start is called before the first frame update
 	void Start() {
 		score = 0;
@@ -20,10 +28,13 @@ public class Level2Score : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-		timeElapsed = Time.time;
+		if (_isDeadState)
+			return;
 
-		_timeText.text = "Time Elapsed: " + timeElapsed.ToString();
-		_bCellText.text = "B Cells Count: " + score.ToString();
+		timeElapsed = Mathf.Round(Time.time * 10f) / 10f;
+
+		_timeText.text = "Time Elapsed: " + timeElapsed.ToString() + "s";
+		_bCellText.text = "Score: " + score.ToString();
 	}
 
 	void OnEnable() {
@@ -36,10 +47,58 @@ public class Level2Score : MonoBehaviour {
 		TCellCollision.OnBCellCollect -= IncrementBCellCount;
 	}
 
-	void EnterDeadState() {
-		enabled = false;
-	}
 	void IncrementBCellCount() {
 		++score;
+	}
+
+	void EnterDeadState() {
+		_isDeadState = true;
+
+		CalculateScore();
+		WriteScoreData("level2Data.txt");
+
+		_scoreController.set_rank_value(_level2Score.grade);
+		_scoreController.set_score_value(_level2Score.score);
+	}
+
+	void CalculateScore() {
+		_level2Score.numCollected = score;
+		_level2Score.time = timeElapsed;
+		_level2Score.score = score * timeElapsed;
+		_level2Score.difficulty = PlayerPrefs.GetInt("difficulty");
+
+		if (_level2Score.score >= 2000) {
+			_level2Score.grade = 'S';
+		} else if (_level2Score.score >= 1000) {
+			_level2Score.grade = 'A';
+		} else if (_level2Score.score >= 750) {
+			_level2Score.grade = 'B';
+		} else if (_level2Score.score >= 500) {
+			_level2Score.grade = 'C';
+		} else if (_level2Score.score >= 250) {
+			_level2Score.grade = 'D';
+		} else if (_level2Score.score >= 100) {
+			_level2Score.grade = 'E';
+		} else {
+			_level2Score.grade = 'F';
+		}
+	}
+
+	void WriteScoreData(string fileName) {
+		string filePath = Application.persistentDataPath + "/" + fileName;
+
+		StreamWriter writer = new StreamWriter(filePath, true);
+
+		writer.WriteLine("\n\n--Level 2 data--");
+		writer.WriteLine("Completed on: " + System.DateTime.Now.ToString());
+		writer.WriteLine("Difficulty: " + _level2Score.difficulty.ToString());
+		writer.WriteLine("Total score: " + _level2Score.score.ToString());
+		writer.WriteLine("Time elapsed: " + _level2Score.time.ToString());
+		writer.WriteLine("Ranking: " + _level2Score.grade.ToString());
+		writer.WriteLine("B cells collected: " + _level2Score.numCollected.ToString());
+
+		Debug.Log(Application.persistentDataPath);
+
+		writer.Close();
 	}
 }

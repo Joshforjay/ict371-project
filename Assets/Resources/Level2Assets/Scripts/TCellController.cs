@@ -50,9 +50,7 @@ public class TCellController : MonoBehaviour {
 	void Update() {
 		Vector3 destination = new Vector3(positions_[positionIndex_], -1.5f, 0.0f);
 
-		Rigidbody rb = GetComponent<Rigidbody>();
-
-		float step = moveSpeed * Time.fixedDeltaTime;
+		float step = moveSpeed * (Time.fixedDeltaTime * Time.timeScale);
 
 		transform.position = Vector3.MoveTowards(transform.position, destination, step);
 	}
