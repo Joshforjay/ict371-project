@@ -95,6 +95,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 8bcd1aa0-c90a-4d4e-ab0b-1c4e8ada6969
     m_ActionName: Player/MoveRight[/Keyboard/d,/XInputControllerWindows/dpad/right,/XInputControllerWindows1/dpad/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows1/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 81e9310a-b10c-49a5-b3ad-4776e7533ef2
+    m_ActionName: Player/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -195,6 +199,10 @@ PrefabInstance:
     - target: {fileID: 640277754327937409, guid: 15c364307b22036479cf348ab582595f, type: 3}
       propertyPath: m_Name
       value: T lymphocyte
+      objectReference: {fileID: 0}
+    - target: {fileID: 640277755210202048, guid: 15c364307b22036479cf348ab582595f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c364307b22036479cf348ab582595f, type: 3}

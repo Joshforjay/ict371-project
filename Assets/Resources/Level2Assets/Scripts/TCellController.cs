@@ -11,12 +11,16 @@ public class TCellController : MonoBehaviour {
 	InputAction moveRight;
 
 	readonly int[] positions_ = new int[3] { -1, 0, 1 };
-	int positionIndex_ = 1;
+	int positionIndex_;
 
 	void Awake() {
 		controls = new TCellControls();
 		moveLeft = controls.Player.MoveLeft;
 		moveRight = controls.Player.MoveRight;
+	}
+
+	void Start() {
+		positionIndex_ = 2;
 	}
 
 	void OnEnable() {
