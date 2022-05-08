@@ -392,6 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timeText: {fileID: 1292306544}
   _bCellText: {fileID: 1201210896}
+  _scoreController: {fileID: 1615075730}
 --- !u!1 &458149185
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,6 +807,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1615075730 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3220524191951857297, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
+  m_PrefabInstance: {fileID: 3993256627559010564}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabbe8c5eee346b439afb64ed7ce899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1708621096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,7 +1124,7 @@ PrefabInstance:
       objectReference: {fileID: 767010241}
     - target: {fileID: 920183288, guid: 6adc06feae8950346be7fa99bde37ca0, type: 3}
       propertyPath: moveSpeed
-      value: 2.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 920183289, guid: 6adc06feae8950346be7fa99bde37ca0, type: 3}
       propertyPath: m_Radius
@@ -1122,6 +1134,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 920183290, guid: 6adc06feae8950346be7fa99bde37ca0, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1778318135}
     - target: {fileID: 920183293, guid: 6adc06feae8950346be7fa99bde37ca0, type: 3}
       propertyPath: m_UseGravity
       value: 0
@@ -1346,6 +1362,10 @@ PrefabInstance:
     - target: {fileID: 4342308034195533464, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: m_text
       value: 'Time elapsed: '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408910909479335640, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
+      propertyPath: showTR
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4408910909479335640, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: TLitemTwoName

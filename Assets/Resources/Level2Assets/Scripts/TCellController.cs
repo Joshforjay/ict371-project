@@ -22,35 +22,55 @@ public class TCellController : MonoBehaviour {
 	void OnEnable() {
 		moveLeft.Enable();
 		moveRight.Enable();
-		moveLeft.started += MoveLeft;
-		moveRight.started += MoveRight;
+		moveLeft.started += MoveLeftE;
+		moveRight.started += MoveRightE;
 	}
 
 	void OnDisable() {
 		moveLeft.Disable();
 		moveRight.Disable();
-		moveLeft.started -= MoveLeft;
-		moveRight.started -= MoveRight;
+		moveLeft.started -= MoveLeftE;
+		moveRight.started -= MoveRightE;
 	}
 
-	void MoveLeft(InputAction.CallbackContext context) {
+	void MoveLeft() {
 		if (positionIndex_ <= 0)
 			return;
 
 		--positionIndex_;
 	}
 
-	void MoveRight(InputAction.CallbackContext context) {
+	void MoveRight() {
 		if (positionIndex_ >= 2)
 			return;
 
 		++positionIndex_;
 	}
 
+	void MoveLeftE(InputAction.CallbackContext context) {
+		MoveLeft();
+	}
+
+	void MoveRightE(InputAction.CallbackContext context) {
+		MoveRight();
+	}
+
 	void Update() {
+		if (Input.touchCount > 0) {
+			Touch touch = Input.GetTouch(0);
+
+			if (touch.phase == UnityEngine.TouchPhase.Began) {
+				if (touch.position.x < Screen.width / 2) {
+					MoveLeft();
+				} else {
+					MoveRight();
+				}
+			}
+		}
+
 		Vector3 destination = new Vector3(positions_[positionIndex_], -1.5f, 0.0f);
 
-		float step = moveSpeed * (Time.fixedDeltaTime * Time.timeScale);
+		float step = moveSpeed * Time.deltaTime;
 
 		transform.position = Vector3.MoveTowards(transform.position, destination, step);
 	}

@@ -23,15 +23,17 @@ public class Level2Score : MonoBehaviour {
 
 	// Start is called before the first frame update
 	void Start() {
+		_isDeadState = false;
+		timeElapsed = 0;
 		score = 0;
 	}
 
 	// Update is called once per frame
 	void Update() {
-		if (_isDeadState)
-			return;
-
-		timeElapsed = Mathf.Round(Time.time * 10f) / 10f;
+		if (!_isDeadState) {
+			timeElapsed += Time.deltaTime;
+			timeElapsed = Mathf.Round(timeElapsed * 100f) / 100f;
+		}
 
 		_timeText.text = "Time Elapsed: " + timeElapsed.ToString() + "s";
 		_bCellText.text = "Score: " + score.ToString();
