@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class TCellController : MonoBehaviour {
-	public float moveSpeed;
+	public float moveSpeed = 10f;
 
 	TCellControls controls;
 	InputAction moveLeft;
@@ -31,20 +31,31 @@ public class TCellController : MonoBehaviour {
 	}
 
 	void OnDisable() {
-		moveLeft.Disable();
-		moveRight.Disable();
 		moveLeft.started -= MoveLeftE;
 		moveRight.started -= MoveRightE;
+		moveLeft.Disable();
+		moveRight.Disable();
 	}
 
-	void MoveLeft() {
+	public int GetDestination() {
+		return positions_[positionIndex_];
+	}
+
+	public void SetDestination(int index) {
+		if (positionIndex_ < 0 || positionIndex_ >= positions_.Length)
+			return;
+
+		positionIndex_ = index;
+	}
+
+	public void MoveLeft() {
 		if (positionIndex_ <= 0)
 			return;
 
 		--positionIndex_;
 	}
 
-	void MoveRight() {
+	public void MoveRight() {
 		if (positionIndex_ >= 2)
 			return;
 
@@ -72,7 +83,7 @@ public class TCellController : MonoBehaviour {
 			}
 		}
 
-		Vector3 destination = new Vector3(positions_[positionIndex_], -1.5f, 0.0f);
+		Vector3 destination = new Vector3(GetDestination(), -1.5f, 0.0f);
 
 		float step = moveSpeed * Time.deltaTime;
 

@@ -99,8 +99,6 @@ public class Level2Score : MonoBehaviour {
 		writer.WriteLine("Ranking: " + _level2Score.grade.ToString());
 		writer.WriteLine("B cells collected: " + _level2Score.numCollected.ToString());
 
-		Debug.Log(Application.persistentDataPath);
-
 		writer.Close();
 	}
 }

@@ -23,6 +23,7 @@ public class TCellCollision : MonoBehaviour {
 				Destroy(gameObject);
 				OnDead();
 				sc.ShowScoreMenu();
+				sc.isPaused = true;
 				break;
 
 			case "BCell":
