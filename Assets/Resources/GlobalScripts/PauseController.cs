@@ -35,7 +35,7 @@ public class PauseController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.X))
+        if(Input.GetAxis("Cancel") != 0 || Input.GetKeyDown(KeyCode.X))
         {
             show_pause_menu();
         }
