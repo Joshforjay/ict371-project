@@ -24,6 +24,7 @@ public class PauseController : MonoBehaviour
 
     void Start()
     {
+        PauseButton.SetActive(true);
         PauseMenu.SetActive(false);
         for(int count = 0; count < infoMenus.Length; count++)
         {

@@ -1191,10 +1191,10 @@ MonoBehaviour:
   centerPointOfSpawn: {fileID: 1126725949}
   zDistTillOutOfView: 11
   xDistTillOutOfView: 7
-  timeBetweenSpawning: 2.5
+  timeBetweenSpawning: 1.5
   maxSpawned: 12
   forceMagnitude: 1
-  levelTimeLimit: 60
+  levelTimeLimit: 10
   gpc: {fileID: 213283097}
   HUD: {fileID: 544065539}
   StartOBJ: {fileID: 682410321}
@@ -2405,6 +2405,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 669222562977060116, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 943257459110208283, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
