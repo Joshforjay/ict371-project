@@ -63,7 +63,7 @@ public class PauseController : MonoBehaviour
     public void show_info_menu()
     {
         PauseMenu.SetActive(false);
-        set_info_menu(0);
+        info_menu(0);
     }
 
     public void hide_info_menu()
@@ -90,7 +90,7 @@ public class PauseController : MonoBehaviour
         set_first_selected();
     }
 
-    public void set_info_menu(int index)
+    public void info_menu(int index)
     {
         index = Mathf.Clamp(index, 0, infoMenus.Length - 1);
         infoMenus[currentActive].SetActive(false);
