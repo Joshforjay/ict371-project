@@ -25,6 +25,7 @@ public class Level4Controller : MonoBehaviour
     private bool end = false;
     static private level4Scores l4;
     private bool was_paused_ = false;
+    private float time_left = 0;
 
     [SerializeField]
     private GameObject HUD;
@@ -47,6 +48,8 @@ public class Level4Controller : MonoBehaviour
         l4.baseScores.numCollected = 0;
         l4.baseScores.score = 0;
         l4.baseScores.time = levelTimeLimit;
+
+        time_left = levelTimeLimit;
 
         HUD.SetActive(false);
         StartOBJ.SetActive(true);
@@ -76,10 +79,11 @@ public class Level4Controller : MonoBehaviour
         {
             unpause_game();
         }
-        
+
+        time_left -= Time.deltaTime;
         hud_update();
 
-        if (Time.time - startTime > levelTimeLimit)
+        if (time_left <= 0)
         {
             if (!end)
             {
@@ -119,9 +123,8 @@ public class Level4Controller : MonoBehaviour
 
         HUDController hud = HUD.transform.GetChild(0).GetComponent<HUDController>();
         hud.set_TLitem_1_number(l4.baseScores.score);
-        float timeLeft = levelTimeLimit - (Time.time - startTime);
-        if(timeLeft < 0) { timeLeft = 0; }
-        hud.set_TLitem_2_number(timeLeft);
+        if(time_left < 0) { time_left = 0; }
+        hud.set_TLitem_2_number(time_left);
     }
 
     private void unpause_game()

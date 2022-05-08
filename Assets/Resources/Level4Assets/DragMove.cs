@@ -15,7 +15,8 @@ public class DragMove : MonoBehaviour
 
     Camera mainCamera;
     bool controllerUsed = false;
-
+    GameObject clickedObject;
+    bool touchingObject = false;
     private void Update()
     {
         touch_drag_update();
@@ -47,7 +48,22 @@ public class DragMove : MonoBehaviour
         Touch touch;
         Ray ray;
         RaycastHit hit;
-        GameObject clickedObject;
+
+        if(Input.touchCount == 0)
+        {
+            touchingObject = false;
+        }
+        else if (touchingObject == true)
+        {
+            //So it continues dragging the same object & only one object at a time
+            ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+            float initDist = Vector3.Distance(clickedObject.transform.position, mainCamera.transform.position);
+            mouseDir = ray.GetPoint(initDist) - clickedObject.transform.position;
+            mouseDir.y = 0;
+            clickedObject.transform.position += mouseDir;
+
+            return;
+        }
 
         for (int count = 0; count < Input.touchCount; count++)
         {
@@ -60,7 +76,7 @@ public class DragMove : MonoBehaviour
                     clickedObject = hit.collider.gameObject;
                     if (clickedObject.name != "Floor")
                     {
-                        
+                        touchingObject = true;
                         float initDist = Vector3.Distance(clickedObject.transform.position, mainCamera.transform.position);
                         clickedObject.TryGetComponent<Rigidbody>(out var rb);
 
