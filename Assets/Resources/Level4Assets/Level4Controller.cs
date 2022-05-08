@@ -24,6 +24,7 @@ public class Level4Controller : MonoBehaviour
     private int lastSide = 10;
     private bool end = false;
     static private level4Scores l4;
+    private bool was_paused_ = false;
 
     [SerializeField]
     private GameObject HUD;
@@ -60,9 +61,20 @@ public class Level4Controller : MonoBehaviour
     void Update()
     {
         StartController start = StartOBJ.transform.GetChild(0).GetComponent<StartController>();
-        if(!start.is_active())
+        if(sceneController.isPaused)
         {
+            was_paused_ = true;
+            for(int count = 0; count < currentlyCreatedObjects.Count; count++)
+            {
+                currentlyCreatedObjects[count].SetActive(false);
+            }
+
             return;
+        }
+
+        if(was_paused_)
+        {
+            unpause_game();
         }
         
         hud_update();
@@ -103,7 +115,6 @@ public class Level4Controller : MonoBehaviour
         {
             startTime = Time.time;
             HUD.SetActive(true);
-            //CursorRender.SetActive(true);
         }
 
         HUDController hud = HUD.transform.GetChild(0).GetComponent<HUDController>();
@@ -113,6 +124,15 @@ public class Level4Controller : MonoBehaviour
         hud.set_TLitem_2_number(timeLeft);
     }
 
+    private void unpause_game()
+    {
+        was_paused_ = false;
+        for (int count = 0; count < currentlyCreatedObjects.Count; count++)
+        {
+            currentlyCreatedObjects[count].SetActive(true);
+        }
+
+    }
     void createNewObject()
     {
         Vector3 spawnLoc = new Vector3(0f, 1f, 0f);

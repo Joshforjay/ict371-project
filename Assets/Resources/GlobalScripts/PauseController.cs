@@ -38,6 +38,9 @@ public class PauseController : MonoBehaviour
         {
             show_pause_menu();
         }
+
+
+
     }
 
     public void show_pause_menu()
@@ -59,8 +62,14 @@ public class PauseController : MonoBehaviour
 
     public void show_info_menu()
     {
-        hide_pause_menu();
+        PauseMenu.SetActive(false);
         set_info_menu(0);
+    }
+
+    public void hide_info_menu()
+    {
+        show_pause_menu();
+        infoMenus[currentActive].SetActive(false);
     }
 
     public void next_info_menu()

@@ -45,10 +45,29 @@ public class SceneController : MonoBehaviour {
     public GameObject scoreFirstButton, levelSelectorFirstButton;
     public levelScores Scores { get; }
 
+    public StartController startObj;
+    public PauseController pauseObj;
+
+    public bool isPaused = true;
     void Start() {
 	}
 
-	public void LoadScene(int index) {
+    private void Update()
+    {
+        bool sActive = startObj.is_active();
+        bool pActive = pauseObj.isPaused;
+
+        if(!sActive || pActive)
+        {
+            isPaused = true;
+        }
+        else
+        {
+            isPaused = false;
+        }
+    }
+
+    public void LoadScene(int index) {
 		SceneManager.LoadScene(index);
 	}
 
