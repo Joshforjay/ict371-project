@@ -31,6 +31,7 @@ public class BloodVesselGeneration : MonoBehaviour {
 			Transform lastVessel = GetLastVessel();
 			float zPos = lastVessel.position.z;
 
+			// Spawn at the end of the last vessel.
 			Vector3 spawnPos = new Vector3(0, 0, zPos + 20.0f);
 
 			Instantiate(bloodVessel, spawnPos, Quaternion.identity, transform);
