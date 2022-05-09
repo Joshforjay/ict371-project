@@ -33,7 +33,7 @@ public class BloodVesselGeneration : MonoBehaviour {
 
 			Vector3 spawnPos = new Vector3(0, 0, zPos + 20.0f);
 
-			Instantiate(bloodVessel, spawnPos, Quaternion.identity, this.transform);
+			Instantiate(bloodVessel, spawnPos, Quaternion.identity, transform);
 
 			OnSpawnVessel();
 		}
