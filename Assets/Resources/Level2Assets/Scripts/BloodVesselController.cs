@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BloodVesselController : MonoBehaviour {
-	public static float moveSpeed = 5f;
+	public static float moveSpeed = 10f;
 	public static float moveSpeedIncrement;
 
 	[SerializeField]

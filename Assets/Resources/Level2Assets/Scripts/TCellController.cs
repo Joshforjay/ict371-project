@@ -20,7 +20,7 @@ public class TCellController : MonoBehaviour {
 	}
 
 	void Start() {
-		positionIndex_ = 2;
+		positionIndex_ = 1;
 	}
 
 	void OnEnable() {

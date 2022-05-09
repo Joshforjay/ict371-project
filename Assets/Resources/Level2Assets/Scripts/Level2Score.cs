@@ -35,6 +35,8 @@ public class Level2Score : MonoBehaviour {
 			timeElapsed = Mathf.Round(timeElapsed * 100f) / 100f;
 		}
 
+		Debug.Log(timeElapsed);
+
 		_timeText.text = "Time Elapsed: " + timeElapsed.ToString() + "s";
 		_bCellText.text = "Score: " + score.ToString();
 	}

@@ -6,6 +6,10 @@ public class Level2SceneController : MonoBehaviour {
 	[SerializeField]
 	SceneController sceneController;
 
+	void Awake() {
+		BloodVesselController.moveSpeed = 10f;
+	}
+
 	// Update is called once per frame
 	void Update() {
 		if (sceneController.isPaused) {
