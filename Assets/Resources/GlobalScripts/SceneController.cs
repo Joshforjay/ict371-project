@@ -60,23 +60,28 @@ public class SceneController : MonoBehaviour {
         if(!sActive || pActive)
         {
             isPaused = true;
+            Time.timeScale = 0;
         }
         else
         {
             isPaused = false;
+            Time.timeScale = 1;
         }
     }
 
     public void LoadScene(int index) {
+        Time.timeScale = 1;
 		SceneManager.LoadScene(index);
 	}
 
 	public void NextScene() {
-		LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Time.timeScale = 1;
+        LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 
 	public void PreviousScene() {
-		LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        Time.timeScale = 1;
+        LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
 	}
 
 	public void ShowScoreMenu() {

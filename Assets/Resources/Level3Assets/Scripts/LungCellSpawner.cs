@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class LungCellSpawner : MonoBehaviour
 {
-    public static int numberOfObjects = 1;
+    public static int numberOfObjects;
     public GameObject infectLungParticle;
 
+    public void setNoOfObjects(int num)
+    {
+        numberOfObjects = num;
+    }    
 
     void Start()
     {
-
         Mesh mesh = GetComponent<MeshFilter>().mesh;
         Vector3[] vertices = mesh.vertices;
         var hash = new HashSet<int>();

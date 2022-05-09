@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMove3 : MonoBehaviour
 {
-    public int moveSpeed = 5;
+    public int moveSpeed = 50;
     public Transform cam;
     Rigidbody rb;
 
@@ -16,7 +16,13 @@ public class PlayerMove3 : MonoBehaviour
     void Update()
     {
         if (Input.GetButton("Fire1"))
-            rb.transform.position += transform.forward * moveSpeed * Time.deltaTime;
+        {
+            rb.velocity = transform.forward * moveSpeed;
+            if (rb.velocity.magnitude >= 100) 
+                rb.velocity = transform.forward * 100;
+        }
+        else if (Input.GetButtonUp("Fire1"))
+           rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
 
         rb.MoveRotation(cam.rotation);
     }
