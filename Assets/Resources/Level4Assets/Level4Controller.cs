@@ -363,7 +363,7 @@ public class Level4Controller : MonoBehaviour
     {
         determine_ranking();
         outputCollectedData oCD = new outputCollectedData();
-        oCD.outputData("level4Data.txt", l4);
+        oCD.outputData("level4Data.csv", l4);
     }
 
     private void determine_ranking()

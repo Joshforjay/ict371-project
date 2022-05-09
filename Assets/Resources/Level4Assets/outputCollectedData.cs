@@ -16,7 +16,18 @@ public class outputCollectedData : MonoBehaviour
 
         string file = Application.persistentDataPath + "/" + path;
         StreamWriter writer = new StreamWriter(file, true);
+        writer.Write(System.DateTime.Now.ToString() + ',');
+        writer.Write(l4.baseScores.difficulty.ToString() + ',');
+        writer.Write(l4.baseScores.score.ToString() + ',');
+        writer.Write(l4.baseScores.time.ToString() + ',');
+        writer.Write(l4.baseScores.grade.ToString() + ',');
+        writer.Write(l4.baseScores.numCollected.ToString() + ',');
+        writer.Write(l4.correctMatches.ToString() + ',');
+        writer.Write(l4.incorrectMatches.ToString() + ',');
+        writer.Write(l4.numberEscaped.ToString() + ',');
+        writer.Write("\n");
 
+        /*
         writer.WriteLine("\n\n--Level 4 data--");
         writer.WriteLine("Completed on: " + System.DateTime.Now.ToString());
         writer.WriteLine("Difficulty: " + l4.baseScores.difficulty.ToString());
@@ -27,7 +38,7 @@ public class outputCollectedData : MonoBehaviour
         writer.WriteLine("Correct matches: " + l4.correctMatches.ToString());
         writer.WriteLine("Incorrect matches: " + l4.incorrectMatches.ToString());
         writer.WriteLine("Number escaped: " + l4.numberEscaped.ToString());
-
+        */
         Debug.Log(Application.persistentDataPath);
 
         writer.Close();
