@@ -5,15 +5,13 @@ using UnityEngine;
 public class CellModeChange : MonoBehaviour
 {
     //Mode 1 (Plasma cell)
-    public Material mat1;
+    public GameObject model1;
+    public GameObject model2;
     public GameObject projectile;
     public Camera cam;
     public Transform attackPoint;
 
     public float shotForce = 5;
-
-    //Mode 2 (Memory cell)
-    public Material mat2;
 
 
     //mode check
@@ -26,10 +24,8 @@ public class CellModeChange : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             modeSwitch = !modeSwitch;
-            if (modeSwitch)
-                this.GetComponentInChildren<MeshRenderer>().material = mat1;
-            else
-                this.GetComponentInChildren<MeshRenderer>().material = mat2;
+            model1.SetActive(modeSwitch);
+            model2.SetActive(!modeSwitch);
         }
 
         if (!modeSwitch)
