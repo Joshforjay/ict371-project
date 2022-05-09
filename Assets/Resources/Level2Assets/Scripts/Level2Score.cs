@@ -97,6 +97,7 @@ public class Level2Score : MonoBehaviour {
 		writer.Write(", " + _level2Score.time.ToString());
 		writer.Write(", " + _level2Score.numCollected.ToString());
 		writer.Write(", " + _level2Score.grade);
+		writer.Write("\n");
 
 		writer.Close();
 	}
