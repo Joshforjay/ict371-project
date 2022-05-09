@@ -57,7 +57,7 @@ public class Level2Score : MonoBehaviour {
 		_isDeadState = true;
 
 		CalculateScore();
-		WriteScoreData("level2Data.txt");
+		WriteScoreData("level2Data.csv");
 
 		_scoreController.set_rank_value(_level2Score.grade);
 		_scoreController.set_score_value(_level2Score.score);
@@ -91,13 +91,13 @@ public class Level2Score : MonoBehaviour {
 
 		StreamWriter writer = new StreamWriter(filePath, true);
 
-		writer.WriteLine("\n\n--Level 2 data--");
-		writer.WriteLine("Completed on: " + System.DateTime.Now.ToString());
-		writer.WriteLine("Difficulty: " + _level2Score.difficulty.ToString());
-		writer.WriteLine("Total score: " + _level2Score.score.ToString());
-		writer.WriteLine("Time elapsed: " + _level2Score.time.ToString());
-		writer.WriteLine("Ranking: " + _level2Score.grade.ToString());
-		writer.WriteLine("B cells collected: " + _level2Score.numCollected.ToString());
+		string csv = _level2Score.difficulty.ToString();
+		csv += ", " + _level2Score.score.ToString();
+		csv += ", " + _level2Score.time.ToString();
+		csv += ", " + _level2Score.numCollected.ToString();
+		csv += ", " + _level2Score.grade;
+
+		writer.WriteLine(csv);
 
 		writer.Close();
 	}
