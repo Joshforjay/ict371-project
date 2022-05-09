@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class TCellController : MonoBehaviour {
 	public float moveSpeed = 10f;
@@ -70,8 +71,16 @@ public class TCellController : MonoBehaviour {
 		MoveRight();
 	}
 
+	public bool IsPointerOverUI(int fingerId) {
+		EventSystem eventSystem = EventSystem.current;
+		return (eventSystem.IsPointerOverGameObject(fingerId) &&
+		        eventSystem.currentSelectedGameObject != null);
+	}
+
 	void Update() {
-		if (Input.touchCount > 0) {
+		Debug.Log(Level2SceneController.isPaused());
+
+		if (Input.touchCount > 0 && !Level2SceneController.isPaused() && !IsPointerOverUI(0)) {
 			Touch touch = Input.GetTouch(0);
 
 			if (touch.phase == UnityEngine.TouchPhase.Began) {

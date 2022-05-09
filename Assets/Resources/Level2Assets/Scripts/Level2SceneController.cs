@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Level2SceneController : MonoBehaviour {
-	[SerializeField]
-	SceneController sceneController;
+	public static SceneController sceneController;
 
 	void Awake() {
 		BloodVesselController.moveSpeed = 10f;
+		sceneController = FindObjectOfType<SceneController>();
 	}
 
 	// Update is called once per frame
@@ -17,5 +17,8 @@ public class Level2SceneController : MonoBehaviour {
 		} else {
 			Time.timeScale = 1f;
 		}
+	}
+	public static bool isPaused() {
+		return sceneController.isPaused;
 	}
 }
