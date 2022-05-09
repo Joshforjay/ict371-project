@@ -11,6 +11,8 @@ public class TCellCollision : MonoBehaviour {
 
 	public SceneController sc;
 
+	public GameObject bCellActivationParticle;
+
 	// Start is called before the first frame update
 	void Start() {}
 
@@ -27,6 +29,9 @@ public class TCellCollision : MonoBehaviour {
 				break;
 
 			case "BCell":
+				GameObject particle = Instantiate(
+				    bCellActivationParticle, collision.transform.position, Quaternion.identity);
+				particle.GetComponent<ParticleSystem>().Play();
 				Destroy(collision.gameObject);
 				OnBCellCollect();
 				break;

@@ -35,11 +35,11 @@ public class BCellGeneration : MonoBehaviour {
 			do {
 				bCellPos.x = Random.Range(-1, 2);
 				bCellPos.y = -1.5f;
-				bCellPos.z = Random.Range(lastVessel.position.z - 10, lastVessel.position.z + 10);
+				bCellPos.z = Random.Range(lastVessel.position.z - 9, lastVessel.position.z + 9);
 
 				covidPos.x = Random.Range(-1, 2);
 				covidPos.y = -1.5f;
-				covidPos.z = Random.Range(lastVessel.position.z - 10, lastVessel.position.z + 10);
+				covidPos.z = Random.Range(lastVessel.position.z - 9, lastVessel.position.z + 9);
 			} while (isClose(bCellPos, covidPos));
 
 			Instantiate(bCell, bCellPos, Quaternion.identity, lastVessel);
