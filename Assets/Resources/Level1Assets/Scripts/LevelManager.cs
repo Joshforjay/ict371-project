@@ -16,6 +16,8 @@ namespace ICTProject
         public GameObject spikeProteinPrefab;
 
         public TextMeshProUGUI timerText;
+        public TextMeshProUGUI scoreText;
+        public TextMeshProUGUI rankText;
         float levelTimer = 45f;
         float actualTime;
 
@@ -69,7 +71,8 @@ namespace ICTProject
                 timer = 0;
                 currentSpikes++;
             }
-            levelTimer -= Time.deltaTime;
+            if(!levelFinished)
+                levelTimer -= Time.deltaTime;
             timerText.text = "Time Left: " + (int)levelTimer;
             if (levelTimer < 0 && !levelFinished)
             {
@@ -101,6 +104,8 @@ namespace ICTProject
 
             writer.Close();
             Debug.Log("End of scene");
+            scoreText.text = "Score: " + score;
+            rankText.text = "Rank: " + bs.grade;
             sceneController.ShowScoreMenu();
         }
 
