@@ -8,7 +8,7 @@ public class BulletCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.transform.gameObject.name == "CovidParticle")
+        if(other.transform.gameObject.name == "COVID19")
         {
             Destroy(other.gameObject);
             Destroy(this.gameObject);
