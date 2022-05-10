@@ -22502,7 +22502,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555774832}
-  m_LocalRotation: {x: -0.61139876, y: -0.000000020423702, z: -0.000000015779941, w: 0.7913227}
+  m_LocalRotation: {x: -0.61139876, y: 0.000000020423691, z: 0.000000015779936, w: 0.7913227}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -32127,8 +32127,12 @@ PrefabInstance:
       value: Level 3
       objectReference: {fileID: 0}
     - target: {fileID: 4408910909479335640, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
+      propertyPath: TLitemTwoName
+      value: 'Time Left(s): '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408910909479335640, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: TRitemOneName
-      value: 'Target: COIVD & Infected Cell'
+      value: 'Target: COVID & Infected Cell'
       objectReference: {fileID: 0}
     - target: {fileID: 4508861089973751514, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -41432,7 +41436,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995904978}
-  m_LocalRotation: {x: -0.5822505, y: -0.000000025218949, z: -0.000000018060977, w: 0.81300956}
+  m_LocalRotation: {x: -0.5822505, y: 0.00000002521894, z: 0.00000001806097, w: 0.81300956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -77924,7 +77928,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949008340}
-  m_LocalRotation: {x: -0.6113988, y: -0.000000023423796, z: -0.0000000134619835, w: 0.7913227}
+  m_LocalRotation: {x: -0.6113988, y: 0.000000023423786, z: 0.0000000134619755, w: 0.7913227}
   m_LocalPosition: {x: 0, y: -12.85, z: -4.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -77971,7 +77975,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949008340}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
