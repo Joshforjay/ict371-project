@@ -115,7 +115,10 @@ public class Level0MenuController : MonoBehaviour
 
     public void next_data_screen()
     {
-        data_screens[data_screen_active].SetActive(false);
+        for (int count = 0; count < data_screens.Length; count++)
+        {
+            data_screens[count].SetActive(false);
+        }
         data_screen_active++;
         data_screen_active = Mathf.Clamp(data_screen_active, 0, data_screens.Length - 1);
         data_screens[data_screen_active].SetActive(true);
@@ -124,7 +127,10 @@ public class Level0MenuController : MonoBehaviour
 
     public void previous_data_screen()
     {
-        data_screens[data_screen_active].SetActive(false);
+        for (int count = 0; count < data_screens.Length; count++)
+        {
+            data_screens[count].SetActive(false);
+        }
         data_screen_active--;
         data_screen_active = Mathf.Clamp(data_screen_active, 0, data_screens.Length - 1);
         data_screens[data_screen_active].SetActive(true);
@@ -149,9 +155,13 @@ public class Level0MenuController : MonoBehaviour
     public void close_data_collection()
     {
         start_screen_ = true;
-        data_screens[data_screen_active].SetActive(false);
+        for(int count = 0; count < data_screens.Length; count++)
+        {
+            data_screens[count].SetActive(false);
+        }
         start_screen_obj_.SetActive(true);
         set_first_button_active(start_screen_obj_button_);
+        data_screen_active = 0;
     }
 
     private bool in_waypoint_area()

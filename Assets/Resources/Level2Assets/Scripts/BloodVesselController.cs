@@ -33,6 +33,7 @@ public class BloodVesselController : MonoBehaviour {
 	void Update() {
 		transform.position -= new Vector3(0, 0, moveSpeed * Time.deltaTime);
 
+		// Despawn after passing the despawn position.
 		if (transform.position.z < despawnPosition) {
 			Destroy(gameObject);
 		}

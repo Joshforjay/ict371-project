@@ -35,8 +35,6 @@ public class Level2Score : MonoBehaviour {
 			timeElapsed = Mathf.Round(timeElapsed * 100f) / 100f;
 		}
 
-		Debug.Log(timeElapsed);
-
 		_timeText.text = "Time Elapsed: " + timeElapsed.ToString() + "s";
 		_bCellText.text = "Score: " + score.ToString();
 	}
@@ -93,13 +91,13 @@ public class Level2Score : MonoBehaviour {
 
 		StreamWriter writer = new StreamWriter(filePath, true);
 
-		string csv = _level2Score.difficulty.ToString();
-		csv += ", " + _level2Score.score.ToString();
-		csv += ", " + _level2Score.time.ToString();
-		csv += ", " + _level2Score.numCollected.ToString();
-		csv += ", " + _level2Score.grade;
-
-		writer.WriteLine(csv);
+		writer.Write(System.DateTime.Now.ToString());
+		writer.Write(", " + _level2Score.difficulty.ToString());
+		writer.Write(", " + _level2Score.score.ToString());
+		writer.Write(", " + _level2Score.time.ToString());
+		writer.Write(", " + _level2Score.numCollected.ToString());
+		writer.Write(", " + _level2Score.grade);
+		writer.Write("\n");
 
 		writer.Close();
 	}

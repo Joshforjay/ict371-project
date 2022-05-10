@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class TCellController : MonoBehaviour {
 	public float moveSpeed = 10f;
@@ -10,6 +11,7 @@ public class TCellController : MonoBehaviour {
 	InputAction moveLeft;
 	InputAction moveRight;
 
+	// Positions of the 3 lanes.
 	readonly int[] positions_ = new int[3] { -1, 0, 1 };
 	int positionIndex_;
 
@@ -70,8 +72,15 @@ public class TCellController : MonoBehaviour {
 		MoveRight();
 	}
 
+	public bool IsPointerOverUI(int fingerId) {
+		// This is used to prevent movement in the event where the player presses the pause menu.
+		EventSystem eventSystem = EventSystem.current;
+		return (eventSystem.IsPointerOverGameObject(fingerId) &&
+		        eventSystem.currentSelectedGameObject != null);
+	}
+
 	void Update() {
-		if (Input.touchCount > 0) {
+		if (Input.touchCount > 0 && !Level2SceneController.isPaused() && !IsPointerOverUI(0)) {
 			Touch touch = Input.GetTouch(0);
 
 			if (touch.phase == UnityEngine.TouchPhase.Began) {
@@ -87,6 +96,7 @@ public class TCellController : MonoBehaviour {
 
 		float step = moveSpeed * Time.deltaTime;
 
+		// Moves towards the destination using an interpolated step.
 		transform.position = Vector3.MoveTowards(transform.position, destination, step);
 	}
 }

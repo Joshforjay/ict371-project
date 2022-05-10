@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
@@ -36,6 +37,12 @@ public class PlayerController : MonoBehaviour
         Vector3 move = new Vector3(movement.x, 0, movement.y);
         move = camera.forward * move.z + camera.right * move.x;
         move.y = 0f;
+
         controller.Move(move * Time.deltaTime * playerSpeed);
+
+        if (Input.touchCount != 0)
+        {
+            controller.Move(new Vector3(0, 0, 1) * Time.deltaTime * playerSpeed);
+        }
     }
 }

@@ -35,11 +35,14 @@ public class BCellGeneration : MonoBehaviour {
 			do {
 				bCellPos.x = Random.Range(-1, 2);
 				bCellPos.y = -1.5f;
-				bCellPos.z = Random.Range(lastVessel.position.z - 9, lastVessel.position.z + 9);
+				bCellPos.z = Random.Range(lastVessel.position.z - 5f, lastVessel.position.z + 5f);
 
 				covidPos.x = Random.Range(-1, 2);
 				covidPos.y = -1.5f;
-				covidPos.z = Random.Range(lastVessel.position.z - 9, lastVessel.position.z + 9);
+				covidPos.z = Random.Range(lastVessel.position.z - 5f, lastVessel.position.z + 5f);
+
+				// Check in case the 2 cells spawned are too close.
+				// This is done so to prevent the COVID cell hidden behind or inside the B-cell.
 			} while (isClose(bCellPos, covidPos));
 
 			Instantiate(bCell, bCellPos, Quaternion.identity, lastVessel);
@@ -48,6 +51,6 @@ public class BCellGeneration : MonoBehaviour {
 	}
 
 	bool isClose(Vector3 pos1, Vector3 pos2) {
-		return Vector3.Distance(pos1, pos2) <= 2.0f;
+		return Vector3.Distance(pos1, pos2) <= 5f;
 	}
 }

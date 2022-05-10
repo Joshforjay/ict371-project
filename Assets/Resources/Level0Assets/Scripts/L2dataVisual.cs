@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using System.IO;
-
-public class L4dataVisual : MonoBehaviour
+public class L2dataVisual : MonoBehaviour
 {
     [SerializeField]
     private WindowGraph window_graph;
@@ -12,29 +11,26 @@ public class L4dataVisual : MonoBehaviour
     bool data_processed = false;
 
     [SerializeField]
-    private string file_name = "level4Data.csv";
+    private string file_name = "level2Data.csv";
 
     private List<float> score;
-    private List<int> num_matched;
-    private List<int> num_incorrect_matched;
-    private List<int> num_missed;
+    private List<float> time;
+    private List<int> collected;
     private List<int> difficulty;
     [SerializeField]
     private bool[] shown_data;
 
 
     // Start is called before the first frame update
-
     void Awake()
     {
         score = new List<float>();
-        num_matched = new List<int>();
-        num_missed = new List<int>();
-        num_incorrect_matched = new List<int>();
+        time = new List<float>();
+        collected = new List<int>();
         difficulty = new List<int>();
 
-        shown_data = new bool[5];
-        for(int count = 0; count < shown_data.Length; count++)
+        shown_data = new bool[4];
+        for (int count = 0; count < shown_data.Length; count++)
         {
             shown_data[count] = true;
         }
@@ -46,6 +42,7 @@ public class L4dataVisual : MonoBehaviour
 
         data_processed = true;
     }
+
     private void Update()
     {
         window_graph.remove_graph();
@@ -70,29 +67,14 @@ public class L4dataVisual : MonoBehaviour
             line = writer.ReadLine();
             contents = line.Split(',');
 
-            if (contents.Length != 10) { continue; }
+            if (contents.Length != 6) { continue; }
 
             difficulty.Add(int.Parse(contents[1]));
             score.Add(float.Parse(contents[2]));
-            num_matched.Add(int.Parse(contents[6]));
-            num_incorrect_matched.Add(int.Parse(contents[7]));
-            num_missed.Add(int.Parse(contents[8]));
-            
-
+            time.Add(float.Parse(contents[3]));
+            collected.Add(int.Parse(contents[4]));
 
         }
-
-        /*
-        for(int count = 0; count < difficulty.Count; count++)
-        {
-            Debug.Log("==================");
-            //Debug.Log(count + " Score: " + score[count]);
-            Debug.Log(count + " difficulty: " + difficulty[count]);
-            Debug.Log(count + " match: " + num_matched[count]);
-            Debug.Log(count + " incorrect match: " + num_incorrect_matched[count]);
-            Debug.Log(count + " missed: " + num_missed[count]);
-        }
-        */
 
         writer.Close();
     }
@@ -106,48 +88,41 @@ public class L4dataVisual : MonoBehaviour
 
     public void create_graph()
     {
+        window_graph.remove_graph();
         Vector2 y = new Vector2(99999, -99999);
 
-        if(shown_data[0])
+        if (shown_data[0])
         {
             y = y_min_max(y.x, y.y, score);
         }
         if (shown_data[1])
         {
-            y = y_min_max(y.x, y.y, num_matched);
+            y = y_min_max(y.x, y.y, collected);
         }
         if (shown_data[2])
         {
-            y = y_min_max(y.x, y.y, num_incorrect_matched);
+            y = y_min_max(y.x, y.y, time);
         }
         if (shown_data[3])
-        {
-            y = y_min_max(y.x, y.y, num_missed);
-        }
-        if (shown_data[4])
         {
             y = y_min_max(y.x, y.y, difficulty);
         }
 
         window_graph.set_y_min_max(y.x + y.x * 0.1f, y.y + y.y * 0.1f);
 
-        if(shown_data[0])
+        if (shown_data[0])
         {
             window_graph.add_graph(score, new Color(0, 0, 0), 0f);
         }
         if (shown_data[1])
         {
-            window_graph.add_graph(num_matched, new Color(0, 1, 0), 0f);
+            window_graph.add_graph(collected, new Color(0, 1, 0), 0f);
         }
         if (shown_data[2])
         {
-            window_graph.add_graph(num_incorrect_matched, new Color(1, 0, 0), 0f);
+            window_graph.add_graph(time, new Color(1, 0, 0), 0f);
         }
         if (shown_data[3])
-        {
-            window_graph.add_graph(num_missed, new Color(0, 0, 1), 0f);
-        }
-        if (shown_data[4])
         {
             window_graph.add_graph(difficulty, new Color(1, 1, 0), 0f);
         }
@@ -155,14 +130,14 @@ public class L4dataVisual : MonoBehaviour
 
     private Vector2 y_min_max(float yMin, float yMax, List<int> values)
     {
-        for(int count = 0; count < values.Count; count++)
+        for (int count = 0; count < values.Count; count++)
         {
-            if(values[count] > yMax)
+            if (values[count] > yMax)
             {
                 yMax = values[count];
             }
 
-            if(values[count] < yMin)
+            if (values[count] < yMin)
             {
                 yMin = values[count];
             }
