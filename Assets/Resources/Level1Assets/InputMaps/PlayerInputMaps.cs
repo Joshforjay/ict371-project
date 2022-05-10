@@ -224,10 +224,10 @@ public partial class @PlayerInputMaps : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""143bb1cd-cc10-4eca-a2f0-a3664166fe91"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Gamepad"",
+                    ""groups"": ""Gamepad;Touch"",
                     ""action"": ""Jet"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
