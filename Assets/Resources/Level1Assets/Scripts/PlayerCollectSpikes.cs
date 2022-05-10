@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 //Late Night Radio by Kevin MacLeod
@@ -13,7 +14,7 @@ namespace ICTProject
     {
         public int points;
 
-        public Text score;
+        public TextMeshProUGUI score;
 
         public LevelManager levelManager;
 
@@ -26,7 +27,7 @@ namespace ICTProject
         // Update is called once per frame
         void Update()
         {
-            score.text = "Spikes Collected: " + points;
+            score.text = "Score: " + points;
         }
 
         private void OnCollisionEnter(Collision collision)

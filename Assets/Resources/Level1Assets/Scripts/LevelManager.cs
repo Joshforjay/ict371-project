@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using TMPro;
 
 namespace ICTProject
 {
@@ -14,7 +15,7 @@ namespace ICTProject
         public GameObject redBloodPrefab;
         public GameObject spikeProteinPrefab;
 
-        public Text timerText;
+        public TextMeshProUGUI timerText;
         float levelTimer = 45f;
         float actualTime;
 
@@ -87,14 +88,14 @@ namespace ICTProject
             bs.grade = GetGrade(score, difficulty);
             sceneController.SetLevel1Scores(bs);
             
-            string file = Application.persistentDataPath + "/" + "level1data";   //path is 
+            string file = Application.persistentDataPath + "/" + "level1data.csv";   //path is 
             //actually just the file name, unless you want a path
             StreamWriter writer = new StreamWriter(file, true);
 
-            writer.WriteLine("Level 1 scores are:");
-            writer.WriteLine("Total time: " + actualTime);
-            writer.WriteLine("Spikes Collected: " + score);
-            writer.WriteLine("Final Grade: " + bs.grade);
+            writer.Write(System.DateTime.Now.ToString());
+            writer.Write(", " + actualTime);
+            writer.Write(", " + score);
+            writer.Write(", " + bs.grade);
 
             Debug.Log(Application.persistentDataPath); //location where it is stored
 
@@ -117,5 +118,6 @@ namespace ICTProject
                 return 'D';
             return 'E';
         }
-    }
+	}
+
 }
