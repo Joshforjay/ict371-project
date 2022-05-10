@@ -20,11 +20,11 @@ public class Score : MonoBehaviour
 
     void Awake()
     {
-        infectedCellsLeft = LungCellSpawner.numberOfObjects;
         difficuluty = PlayerPrefs.GetInt("difficulty");
         if (difficuluty == 0)
             difficuluty = 1;
         lungCount.setNoOfObjects(5 * difficuluty);
+        infectedCellsLeft = LungCellSpawner.numberOfObjects;
     }
 
     // Update is called once per frame
