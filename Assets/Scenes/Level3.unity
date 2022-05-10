@@ -2614,7 +2614,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995904978}
-  m_LocalRotation: {x: -0.5822505, y: -0.000000025218949, z: -0.000000018060977, w: 0.81300956}
+  m_LocalRotation: {x: -0.5822505, y: 0.00000002521894, z: 0.00000001806097, w: 0.81300956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3145,7 +3145,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274056316}
-  m_LocalRotation: {x: -0.59694237, y: 0.000000015433793, z: 0.00000001148357, w: 0.8022842}
+  m_LocalRotation: {x: -0.59694237, y: -0.000000015433793, z: -0.00000001148357, w: 0.8022842}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3935,7 +3935,6 @@ GameObject:
   - component: {fileID: 1631830746}
   - component: {fileID: 1631830744}
   - component: {fileID: 1631830747}
-  - component: {fileID: 1631830748}
   - component: {fileID: 1631830749}
   - component: {fileID: 1631830750}
   - component: {fileID: 1631830751}
@@ -4033,7 +4032,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1631830741}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0ec46ee301a5a504c8914fa0635d5947, type: 3}
@@ -4122,29 +4121,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!164 &1631830748
-AudioReverbFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631830741}
-  m_Enabled: 0
-  m_DryLevel: 0
-  m_Room: -1000
-  m_RoomHF: -476
-  m_DecayTime: 4.32
-  m_DecayHFRatio: 0.59
-  m_ReflectionsLevel: -789
-  m_ReverbLevel: -289
-  m_ReverbDelay: 0.03
-  m_Diffusion: 100
-  m_Density: 100
-  m_HFReference: 5000
-  m_RoomLF: 0
-  m_LFReference: 250
-  m_ReflectionsDelay: 0
-  m_ReverbPreset: 7
 --- !u!114 &1631830749
 MonoBehaviour:
   m_ObjectHideFlags: 0

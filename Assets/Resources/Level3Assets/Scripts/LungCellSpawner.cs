@@ -17,7 +17,6 @@ public class LungCellSpawner : MonoBehaviour
         Mesh mesh = GetComponent<MeshFilter>().mesh;
         Vector3[] vertices = mesh.vertices;
         var hash = new HashSet<int>();
-        Debug.Log("Vertice size: " + mesh.vertices.Length + "\n");
 
    
         for (int i = 0; i < numberOfObjects; ++i)
