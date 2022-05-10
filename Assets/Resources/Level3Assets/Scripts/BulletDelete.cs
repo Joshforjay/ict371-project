@@ -14,6 +14,7 @@ public class BulletDelete : MonoBehaviour
         {
             Debug.Log("Deleted bullet");
             Destroy(this.gameObject);
+            Score.covidCellsLeft--;
         }
     }
 }

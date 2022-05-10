@@ -26,5 +26,6 @@ public class PlayerMove3 : MonoBehaviour
 
         rb.MoveRotation(cam.rotation);
     }
+
 }
 

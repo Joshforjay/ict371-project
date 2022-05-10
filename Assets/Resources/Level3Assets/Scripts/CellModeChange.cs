@@ -23,19 +23,29 @@ public class CellModeChange : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            modeSwitch = !modeSwitch;
-            model1.SetActive(modeSwitch);
-            model2.SetActive(!modeSwitch);
+            switchMode();
         }
 
         if (!modeSwitch)
         {
             if (Input.GetButtonDown("Fire2"))
             {
-                GameObject currentBullet = Instantiate(projectile, transform.position, Quaternion.identity);
-                currentBullet.GetComponent<Rigidbody>().AddForce(attackPoint.forward.normalized * shotForce, ForceMode.Impulse);
+                fireBullet();
             }
         }
 
+    }
+
+    public void switchMode()
+    {
+        modeSwitch = !modeSwitch;
+        model1.SetActive(modeSwitch);
+        model2.SetActive(!modeSwitch);
+    }
+
+    public void fireBullet()
+    {
+        GameObject currentBullet = Instantiate(projectile, transform.position, Quaternion.identity);
+        currentBullet.GetComponent<Rigidbody>().AddForce(cam.transform.forward.normalized * shotForce, ForceMode.Impulse);
     }
 }

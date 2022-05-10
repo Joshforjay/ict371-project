@@ -108,4 +108,19 @@ public class HUDController : MonoBehaviour
     {
         TR.SetActive(val);
     }
+
+    public void set_TLOne_num(float num)
+    {
+        TLitem1Num = num;
+    }
+
+    public void set_TLTwo_num(float num)
+    {
+        TLitem2Num = num;
+    }
+
+    public void set_TLTwo_name(string txt)
+    {
+        TLitemTwoName = txt;
+    }
 }

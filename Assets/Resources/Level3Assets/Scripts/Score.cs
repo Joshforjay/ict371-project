@@ -10,9 +10,11 @@ public class Score : MonoBehaviour
     private LungCellSpawner lungCount = new LungCellSpawner();
     public SceneController sceneController;
     public ScoreController scoreController;
-    public Text displayText1, displayText2;
+    public HUDController hudController;
     public static bool instructionsBool = true;
     public static int infectedCellsLeft;
+    public static int covidCellsLeft = 3;
+    private int totalCells;
     float elapsedTime = 0;
     private bool endLevel = true;
     char rank;
@@ -24,7 +26,9 @@ public class Score : MonoBehaviour
         if (difficuluty == 0)
             difficuluty = 1;
         lungCount.setNoOfObjects(5 * difficuluty);
+        totalCells = 5 * difficuluty;
         infectedCellsLeft = LungCellSpawner.numberOfObjects;
+        hudController.set_TLTwo_name("Time: ");
     }
 
     // Update is called once per frame
@@ -33,6 +37,9 @@ public class Score : MonoBehaviour
         if (infectedCellsLeft != 0)
         {
             elapsedTime += Time.deltaTime;
+            //time.GetComponent<TMPro.TextMeshProUGUI>().text
+            hudController.set_TLOne_num(totalCells - infectedCellsLeft);
+            hudController.set_TLTwo_num((int)elapsedTime);
         }
         else if(endLevel)
         {
@@ -43,10 +50,6 @@ public class Score : MonoBehaviour
             sceneController.ShowScoreMenu();
             endLevel = false;
         }
-         
-
-        displayText1.text = "Time: " + elapsedTime.ToString();
-        displayText2.text = "Remaining infected cells: " + infectedCellsLeft.ToString();
             
     }
 
@@ -76,16 +79,9 @@ public class Score : MonoBehaviour
         StreamWriter writer = new StreamWriter(file, true);
         string str = System.DateTime.Now.ToString() + ", " +
             difficuluty.ToString() + ", " + elapsedTime.ToString()
-            + ", " + rank.ToString();
+            + ", " + rank.ToString() + ", " + (3 - covidCellsLeft) + "\n";
 
         writer.WriteLine(str);
-        //writer.WriteLine("\nLevel 3 data: ");
-        //writer.WriteLine("Completed time: " + System.DateTime.Now.ToString());
-        //writer.WriteLine("Difficulty: " + difficuluty.ToString());
-        //writer.WriteLine("Overall time: " + elapsedTime.ToString());
-        //writer.WriteLine("Ranking: " + rank.ToString());
-
-        //Debug.Log(Application.persistentDataPath);
 
         writer.Close();
     }
