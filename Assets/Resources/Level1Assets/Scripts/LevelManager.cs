@@ -95,7 +95,7 @@ namespace ICTProject
             writer.Write(System.DateTime.Now.ToString());
             writer.Write(", " + actualTime);
             writer.Write(", " + score);
-            writer.Write(", " + bs.grade);
+            writer.Write(", " + bs.grade + "\n");
 
             Debug.Log(Application.persistentDataPath); //location where it is stored
 
