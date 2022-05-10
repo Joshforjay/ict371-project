@@ -9,6 +9,7 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     private LungCellSpawner lungCount = new LungCellSpawner();
     public SceneController sceneController;
+    public ScoreController scoreController;
     public Text displayText1, displayText2;
     public static bool instructionsBool = true;
     public static int infectedCellsLeft;
@@ -30,13 +31,17 @@ public class Score : MonoBehaviour
     void Update()
     {
         if (infectedCellsLeft != 0)
+        {
             elapsedTime += Time.deltaTime;
+        }
         else if(endLevel)
         {
-            sceneController.ShowScoreMenu();
-            endLevel = false;
             ScoreCalculator();
             SendDataToFile("Level3Data.csv");
+            scoreController.set_score_value(elapsedTime);
+            scoreController.set_rank_value(rank);
+            sceneController.ShowScoreMenu();
+            endLevel = false;
         }
          
 
@@ -69,14 +74,18 @@ public class Score : MonoBehaviour
     {
         string file = Application.persistentDataPath + "/" + fileName;
         StreamWriter writer = new StreamWriter(file, true);
+        string str = System.DateTime.Now.ToString() + ", " +
+            difficuluty.ToString() + ", " + elapsedTime.ToString()
+            + ", " + rank.ToString();
 
-        writer.WriteLine("\nLevel 3 data: ");
-        writer.WriteLine("Completed time: " + System.DateTime.Now.ToString());
-        writer.WriteLine("Difficulty: " + difficuluty.ToString());
-        writer.WriteLine("Overall time: " + elapsedTime.ToString());
-        writer.WriteLine("Ranking: " + rank.ToString());
+        writer.WriteLine(str);
+        //writer.WriteLine("\nLevel 3 data: ");
+        //writer.WriteLine("Completed time: " + System.DateTime.Now.ToString());
+        //writer.WriteLine("Difficulty: " + difficuluty.ToString());
+        //writer.WriteLine("Overall time: " + elapsedTime.ToString());
+        //writer.WriteLine("Ranking: " + rank.ToString());
 
-        Debug.Log(Application.persistentDataPath);
+        //Debug.Log(Application.persistentDataPath);
 
         writer.Close();
     }
