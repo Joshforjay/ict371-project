@@ -4562,7 +4562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7023726906541662553
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18135,7 +18135,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Infected cell (lung)
+  m_text: Infected cell
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e5abad5fd9979114c8b3cbb84c28b41a, type: 2}
@@ -31803,7 +31803,7 @@ RectTransform:
   m_GameObject: {fileID: 9219749657221087135}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 3, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 6518354741795709208}
   m_RootOrder: 1
@@ -31841,7 +31841,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: ed19f16208f7bc74fbd7ebd2fb52d690, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
