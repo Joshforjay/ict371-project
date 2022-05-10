@@ -376,6 +376,103 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 189103609}
   m_CullTransparentMesh: 1
+--- !u!1001 &215089833
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790402, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581852980990790414, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
+      propertyPath: m_Name
+      value: MoverCanvas
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7265ffca4db2e0f4e895f805be167b61, type: 3}
 --- !u!1 &238290896
 GameObject:
   m_ObjectHideFlags: 0
@@ -2343,7 +2440,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72dac21f26b3d041a9763e8653a815b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneController: {fileID: 767010241}
 --- !u!4 &1708621098
 Transform:
   m_ObjectHideFlags: 0
