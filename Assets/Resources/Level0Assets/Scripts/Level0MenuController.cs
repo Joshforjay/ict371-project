@@ -58,6 +58,7 @@ public class Level0MenuController : MonoBehaviour
         if (in_waypoint_area() && startUI_ == false)
         {
             startUI_ = true;
+            Cursor.visible = true;
         }
 
         if (startUI_)
@@ -82,6 +83,11 @@ public class Level0MenuController : MonoBehaviour
         }
 
 
+    }
+
+    public void exit_program()
+    {
+        Application.Quit();
     }
 
     private void start_info_update()
