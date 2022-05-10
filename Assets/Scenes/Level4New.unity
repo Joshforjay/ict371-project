@@ -3192,7 +3192,7 @@ PrefabInstance:
       objectReference: {fileID: 1555257159}
     - target: {fileID: 5924393440633862384, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6027627270766854167, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3292,7 +3292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8273315366843727349, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8379968570485754991, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: m_RootOrder
@@ -4800,27 +4800,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'COVID-19/Spike : marcophage, muscle, plasma, red blood
-
-    Red blood
-    : COVID-19, Spike protein
+  m_text: 'COVID-19/Spike : muscle, red blood
 
     Plasma : COVID-19, Spike protein
 
-    Infected
-    cell : killer memory
+    Killer
+    memory : infected cell
 
-    Killer memory : infected cell
+    Macrophage : COVID-19, T helper, Spike
 
-    Macrophage : COVID-19,
-    T helper, Spike
+    Vaccine:
+    Muscle
 
-    Muscle: COVID-19, Vaccine, Spike
-
-    Vaccine: Muscle
-
-    T
-    Helper: B cell, Marophage
+    T Helper: B cell, Marophage
 
     B Cell: T helper
 
