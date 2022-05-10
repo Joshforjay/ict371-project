@@ -63,7 +63,7 @@ public class L3dataVisual : MonoBehaviour
 
             difficulty.Add(int.Parse(contents[1]));
             time.Add(float.Parse(contents[2]));
-            neutralised.Add(int.Parse(contents[3]));
+            neutralised.Add(int.Parse(contents[4]));
 
         }
 
