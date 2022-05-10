@@ -8101,6 +8101,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4408910909479335640, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
+      propertyPath: TLitemTwoName
+      value: 'Time Left (s): '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408910909479335640, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: TRitemOneName
       value: 'Target: 20'
       objectReference: {fileID: 0}
