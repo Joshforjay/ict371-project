@@ -2104,7 +2104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148058589596349835, guid: b951d8c101baa5445be35878de7eb311, type: 3}
       propertyPath: m_Name
-      value: SpikeProtein (5)
+      value: SpikeProtein
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b951d8c101baa5445be35878de7eb311, type: 3}
@@ -8330,6 +8330,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1322523431498887828, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1402202413908203692, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: m_text
       value: 1/3
@@ -8541,7 +8545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8001630037228882552, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8099706339474229446, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: m_IsActive

@@ -79,6 +79,7 @@ namespace ICTProject
             //timerText.text = "Time Left: " + (int)levelTimer + "s";
             levelTimer = Mathf.Clamp(levelTimer, 0, 9999999);
             hc.set_TLTwo_num(Mathf.Round(levelTimer * 100f) / 100f);
+            hc.set_TLitem_1_number(score);
             if (levelTimer <= 0 && !levelFinished)
             {
                 EndOfScene();

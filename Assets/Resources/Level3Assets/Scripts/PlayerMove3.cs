@@ -25,10 +25,10 @@ public class PlayerMove3 : MonoBehaviour {
 
 		if (Input.GetButton("Fire1")) {
 			if (rb.velocity.magnitude < 100)
-				rb.velocity = transform.forward * moveSpeed;
+				rb.velocity = cam.forward * moveSpeed * Time.deltaTime;
 		} else if (Input.GetButtonUp("Fire1"))
 			rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
 
-		rb.MoveRotation(cam.rotation);
+		//rb.MoveRotation(cam.rotation);
 	}
 }

@@ -28,7 +28,7 @@ public class Score : MonoBehaviour
         lungCount.setNoOfObjects(5 * difficuluty);
         totalCells = 5 * difficuluty;
         infectedCellsLeft = LungCellSpawner.numberOfObjects;
-        hudController.set_TLTwo_name("Time: ");
+        hudController.set_TLTwo_name("Time (s): ");
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class Score : MonoBehaviour
             elapsedTime += Time.deltaTime;
             //time.GetComponent<TMPro.TextMeshProUGUI>().text
             hudController.set_TLOne_num(totalCells - infectedCellsLeft);
-            hudController.set_TLTwo_num((int)elapsedTime);
+            hudController.set_TLTwo_num(Mathf.Round(elapsedTime * 100f) / 100f);
         }
         else if(endLevel)
         {
