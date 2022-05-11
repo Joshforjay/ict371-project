@@ -8147,7 +8147,7 @@ PrefabInstance:
     - target: {fileID: 5764771263680922759, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: firstButtonOnSlides.Array.data[2]
       value: 
-      objectReference: {fileID: 2050665668}
+      objectReference: {fileID: 2050665667}
     - target: {fileID: 5764771263680922759, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: firstButtonOnSlides.Array.data[3]
       value: 
@@ -8267,11 +8267,6 @@ RectTransform:
 --- !u!1 &2050665667 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3331843680468412042, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
-  m_PrefabInstance: {fileID: 2050665665}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2050665668 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4981857721534062758, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
   m_PrefabInstance: {fileID: 2050665665}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2123248799293859763
