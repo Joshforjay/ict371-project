@@ -1643,6 +1643,7 @@ MonoBehaviour:
   timerText: {fileID: 2018473407}
   scoreText: {fileID: 806096387}
   rankText: {fileID: 274017773}
+  hc: {fileID: 1215481045}
   maxSpikes: 30
   muscles:
   - {fileID: 1843757714}
@@ -2072,6 +2073,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156658693}
   m_CullTransparentMesh: 1
+--- !u!114 &1215481045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4408910909479335640, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
+  m_PrefabInstance: {fileID: 2050665665}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de8a057e5f8448d47aaa5b96acdc4795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1241522969
 GameObject:
   m_ObjectHideFlags: 0
@@ -8100,9 +8112,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4342308034195533464, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4408910909479335640, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: TLitemTwoName
-      value: 'Time Left (s): '
+      value: 'Time Left(s): '
       objectReference: {fileID: 0}
     - target: {fileID: 4408910909479335640, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: TRitemOneName

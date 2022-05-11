@@ -22,6 +22,9 @@ namespace ICTProject
         float actualTime;
 
         [SerializeField]
+        HUDController hc;
+
+        [SerializeField]
         int maxSpikes = 30;
         [SerializeField]
         GameObject[] muscles;
@@ -73,7 +76,8 @@ namespace ICTProject
             }
             if(!levelFinished)
                 levelTimer -= Time.deltaTime;
-            timerText.text = "Time Left: " + (int)levelTimer;
+            //timerText.text = "Time Left: " + (int)levelTimer + "s";
+            hc.set_TLTwo_num(Mathf.Round(levelTimer * 100f) / 100f);
             if (levelTimer < 0 && !levelFinished)
             {
                 EndOfScene();
