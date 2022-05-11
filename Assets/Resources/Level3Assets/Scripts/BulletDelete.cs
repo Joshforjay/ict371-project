@@ -12,7 +12,6 @@ public class BulletDelete : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, obj.position) >= 200)
         {
-            Debug.Log("Deleted bullet");
             Destroy(this.gameObject);
         }
     }
