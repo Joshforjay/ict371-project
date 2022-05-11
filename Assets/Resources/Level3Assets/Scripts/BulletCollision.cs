@@ -12,6 +12,7 @@ public class BulletCollision : MonoBehaviour
         {
             Destroy(other.gameObject);
             Destroy(this.gameObject);
+            Score.covidCellsLeft--;
         }
         
     }
