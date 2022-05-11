@@ -59,8 +59,9 @@ public class L3dataVisual : MonoBehaviour
             line = writer.ReadLine();
             contents = line.Split(',');
 
-            //if (contents.Length != 4) { continue; }
+            if (contents.Length != 5) { continue; }
 
+            Debug.Log("L3 data size = " + contents.Length); 
             difficulty.Add(int.Parse(contents[1]));
             time.Add(float.Parse(contents[2]));
             neutralised.Add(int.Parse(contents[4]));
