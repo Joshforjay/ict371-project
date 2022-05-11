@@ -77,8 +77,9 @@ namespace ICTProject
             if(!levelFinished)
                 levelTimer -= Time.deltaTime;
             //timerText.text = "Time Left: " + (int)levelTimer + "s";
+            levelTimer = Mathf.Clamp(levelTimer, 0, 9999999);
             hc.set_TLTwo_num(Mathf.Round(levelTimer * 100f) / 100f);
-            if (levelTimer < 0 && !levelFinished)
+            if (levelTimer <= 0 && !levelFinished)
             {
                 EndOfScene();
                 levelFinished = true;
@@ -115,17 +116,20 @@ namespace ICTProject
 
         char GetGrade(int s, int d)
         {
-            if (s * d > 20)
-                return 'S';
-            if (s * d > 14)
-                return 'A';
+            d = 4 - d;
             if (s * d > 10)
-                return 'B';
+                return 'S';
             if (s * d > 8)
+                return 'A';
+            if (s * d > 6)
+                return 'B';
+            if (s * d > 4)
                 return 'C';
-            if (s * d > 5)
+            if (s * d > 2)
                 return 'D';
-            return 'E';
+            if (s * d > 1)
+                return 'E';
+            return 'F';
         }
 	}
 

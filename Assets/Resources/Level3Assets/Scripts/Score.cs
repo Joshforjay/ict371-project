@@ -56,19 +56,19 @@ public class Score : MonoBehaviour
     void ScoreCalculator()
     {
 
-        if (elapsedTime < 20)
+        if (elapsedTime < 10)
             rank = 'S';
-        else if (elapsedTime < 30)
+        else if (elapsedTime < 15)
             rank = 'A';
-        else if (elapsedTime < 40)
+        else if (elapsedTime < 20)
             rank = 'B';
-        else if (elapsedTime < 50)
+        else if (elapsedTime < 25)
             rank = 'C';
-        else if (elapsedTime < 60)
+        else if (elapsedTime < 30)
             rank = 'D';
-        else if (elapsedTime < 70)
+        else if (elapsedTime < 35)
             rank = 'E';
-        else if (elapsedTime >= 80)
+        else if (elapsedTime >= 40)
             rank = 'F';
 
     }

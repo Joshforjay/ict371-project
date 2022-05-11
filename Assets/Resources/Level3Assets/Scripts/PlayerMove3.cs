@@ -16,11 +16,11 @@ public class PlayerMove3 : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 		if (Physics.Linecast(transform.position, cam.position, out hit)) {
-			cam.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+			//cam.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
 		}
 
 		if (cam.localPosition.z > -3f) {
-			cam.localPosition = new Vector3(0f, 0f, -3f);
+			//cam.localPosition = new Vector3(0f, 0f, -3f);
 		}
 
 		if (Input.GetButton("Fire1")) {

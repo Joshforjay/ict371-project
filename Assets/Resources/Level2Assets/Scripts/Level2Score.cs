@@ -18,6 +18,9 @@ public class Level2Score : MonoBehaviour {
 	[SerializeField]
 	ScoreController _scoreController;
 
+	[SerializeField]
+	HUDController hc;
+
 	bool _isDeadState = false;
 	baseScores _level2Score;
 
@@ -33,13 +36,15 @@ public class Level2Score : MonoBehaviour {
 		if (!_isDeadState) {
 			timeElapsed += Time.deltaTime;
 			timeElapsed = Mathf.Round(timeElapsed * 100f) / 100f;
-		}
+        }
 
-		_timeText.text = "Time Elapsed: " + timeElapsed.ToString() + "s";
-		_bCellText.text = "Score: " + score.ToString();
-	}
+        //_timeText.text = "Time Elapsed: " + timeElapsed.ToString() + "s";
+        //_bCellText.text = "Score: " + score.ToString();
+        hc.set_TLitem_1_number(score);
+		hc.set_TLitem_2_number(timeElapsed);
+    }
 
-	void OnEnable() {
+    void OnEnable() {
 		TCellCollision.OnDead += EnterDeadState;
 		TCellCollision.OnBCellCollect += IncrementBCellCount;
 	}
