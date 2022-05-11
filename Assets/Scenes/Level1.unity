@@ -368,7 +368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148058589596349835, guid: b951d8c101baa5445be35878de7eb311, type: 3}
       propertyPath: m_Name
-      value: SpikeProtein (2)
+      value: SpikeProtein
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b951d8c101baa5445be35878de7eb311, type: 3}
@@ -1406,7 +1406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148058589596349835, guid: b951d8c101baa5445be35878de7eb311, type: 3}
       propertyPath: m_Name
-      value: SpikeProtein (3)
+      value: SpikeProtein
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b951d8c101baa5445be35878de7eb311, type: 3}
@@ -2708,7 +2708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148058589596349835, guid: b951d8c101baa5445be35878de7eb311, type: 3}
       propertyPath: m_Name
-      value: SpikeProtein (4)
+      value: SpikeProtein
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b951d8c101baa5445be35878de7eb311, type: 3}
@@ -8292,7 +8292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148058589596349835, guid: b951d8c101baa5445be35878de7eb311, type: 3}
       propertyPath: m_Name
-      value: SpikeProtein (1)
+      value: SpikeProtein
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b951d8c101baa5445be35878de7eb311, type: 3}
