@@ -43,22 +43,22 @@ public class ButtonMovement : MonoBehaviour
 
     void moveLeft()
     {
-        rb.AddTorque(new Vector3(0, 0, (100.0f * moveSpeed) * Time.deltaTime));
+        rb.AddTorque(Vector3.up * (-100.0f * moveSpeed) * Time.deltaTime);
     }
 
     void moveRight()
     {
-        rb.AddTorque(new Vector3(0, 0, (-100.0f * moveSpeed) * Time.deltaTime));
+        rb.AddTorque(Vector3.up * (100.0f * moveSpeed) * Time.deltaTime);
     }
 
     void moveUp()
     {
-        rb.AddTorque(new Vector3((-100.0f * moveSpeed) * Time.deltaTime, 0, 0));
+        rb.AddRelativeTorque(Vector3.right * (-100.0f * moveSpeed) * Time.deltaTime);
     }
 
     void moveDown()
     {
-        rb.AddTorque(new Vector3((100.0f * moveSpeed) * Time.deltaTime, 0, 0));
+        rb.AddRelativeTorque(Vector3.right * (100.0f * moveSpeed) * Time.deltaTime);
     }
 
     void modeChange()
