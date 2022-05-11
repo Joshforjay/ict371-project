@@ -4195,17 +4195,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'There are 3 types of muscles cells throughout the body (skeletal,
-
-    smooth
+  m_text: 'There are 3 types of muscle cells throughout the body (skeletal, smooth
     & cardiac). The upper arm contains skeletal muscle cells.
 
 
     The vaccine is
-    inserted into the upper arm which infects the muscle
-
-    cells to produce protein
-    spikes to help user immunity.'
+    inserted into the upper arm which infects the muscle cells to produce protein
+    spikes to help user immunity. User immunity is helped as your bodies immune system
+    records the spike proteins, so during an infection of COVID you are better prepared
+    as your body acts faster'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e5abad5fd9979114c8b3cbb84c28b41a, type: 2}
@@ -4268,7 +4266,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -590.2705, y: -314.86035, z: -591.97363, w: -164.17188}
+  m_margin: {x: -590.2705, y: -314.86035, z: -97.3349, w: -164.17188}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4562,7 +4560,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7023726906541662553
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7771,12 +7769,12 @@ MonoBehaviour:
 
     The
     macrophage will bump into and absorb spike proteins and COVID-19 cells. The marcophage
-    will create a antigen which it presents on its outside allowing T cells to become
+    will create an antigen which it presents on its outside allowing T cells to become
     activated and divide into multiple types (helper T cells, Suppressor T cells
     or Cytotoxic T cells).
 
 
-    The marophage is the first set in building defences
+    The marophage is the first cell in building defences
     against a new threat.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -23214,8 +23212,8 @@ MonoBehaviour:
     (skeletal muscle cells)
 
 
-    Overtime your body fogets about
-    the virus, so the booster shoot
+    Overtime your body forgets about
+    the virus, so the booster shot
 
     is there to build back up your immunity.'
   m_isRightToLeft: 0
@@ -23992,7 +23990,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'COVID-19 is a virus, and like all viruses its goal is to infect other
-    cells, so that is can reproduce to infect more.
+    cells, so that it can reproduce to infect more.
 
 
     From the picture on the
@@ -24001,9 +23999,12 @@ MonoBehaviour:
     it start producing more COVID-19 cells.
 
 
-    The plasma cell will attached antibodies
+    The plasma cell will attache antibodies
     to provide a protective barrier around the COVID-19 cell so it can''t inject
-    other cells with its RNA.'
+    other cells with its RNA.
+
+    Will infect whatever it can get its hands on (e.g.,
+    red blood cell, muscle cell)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e5abad5fd9979114c8b3cbb84c28b41a, type: 2}
@@ -24930,14 +24931,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'An activated B cell (which has absorbed a virus) interacts with an activated
-    T cell (T helper cell). When activated the B cell will divide into a memory b
-    cell which is used to remember the virus for later protections. The B cell can
-    also become a plasma cell which is talked about later.
+    T cell (T helper cell). When it interacts the B cell will divide into a memory
+    b cell which is used to remember the virus for later protections. The B cell
+    can also become a plasma cell which is talked about later.
 
 
-    B cells are important
-    in the immune system as without them, the body would not beable to fight back
-    agaisnt the virus.'
+    B cells are
+    important in the immune system as without them, the body would not be able to
+    fight back against the virus.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e5abad5fd9979114c8b3cbb84c28b41a, type: 2}
@@ -26959,16 +26960,17 @@ MonoBehaviour:
 
 
     These
-    infected cells will continue to produce bad cells until they die.
+    infected cells will continue to produce bad cells until they are destroyed, which
+    can be done by the killer memory cell.
 
 
-    In level
-    3, the player needs to eliminate infected cells located in the lunge after the
-    human has been in contact with COVID-19.
+    In level 3, the player needs to
+    eliminate infected cells located in the lung, after the human has been in contact
+    with COVID-19.
 
 
-    It is crucial to eliminate infected
-    cells otherwise the virus will never be destoyed.'
+    It is crucial to eliminate infected cells otherwise the
+    virus will never be destoyed.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e5abad5fd9979114c8b3cbb84c28b41a, type: 2}

@@ -2186,11 +2186,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: "  Records data from each game played. Here is a list of the more important
     data collected.\n\n   Score (Black): An upwards trend in score is good, it shows
-    the player is learning (or easier difficulty)\n   Matches (Green): Upwards trend
-    is better, able to correctly match two cells.\n   Failed matches (Red): Downward
-    trend is better, able to correctly identify wrong matches.\n   Missed (Blue):
-    Upwards is good or bad as might not have found match, and left it.\n   Difficulty
-    (Yellow): Shows difficulty (higher = more difficult)"
+    the player is learning (difficulty will effect)\n   Matches (Green): Upwards
+    trend is better, able to correctly match two cells.\n   Failed matches (Red):
+    Downward trend is better, able to correctly identify wrong matches.\n   Missed
+    (Blue): Upwards is good or bad as might not have found match, and left it.\n  
+    Difficulty (Yellow): Shows difficulty (higher = more difficult)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e5abad5fd9979114c8b3cbb84c28b41a, type: 2}
@@ -13794,7 +13794,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "  Records data from each game played.\n\n   Number collected (Black):
-    Represents the number of spike protiens the player was able to collect. An upwards
+    Represents the number of spike proteins the player was able to collect. An upwards
     trend is better, show user knows macrophages objective.\n   Time (Red): Difficulty
     affects the time (higher difficulty = lower time).\n   Collected per min (Green):
     The The number collected per minute is an estimate based on other two values.
@@ -22239,10 +22239,10 @@ MonoBehaviour:
     then medium then hard for the best experience.
 
 
-    Apparently the info pannel
+    Apparently the info panel
     in
 
-    each level had cool
+    each level has cool
 
     information'
   m_isRightToLeft: 0
