@@ -1002,6 +1002,7 @@ GameObject:
   m_Component:
   - component: {fileID: 358643734}
   - component: {fileID: 358643733}
+  - component: {fileID: 358643735}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -1027,7 +1028,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
+  m_LookAt: {fileID: 1349977570}
   m_Follow: {fileID: 1349977570}
   m_Lens:
     FieldOfView: 80
@@ -1051,7 +1052,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358643732}
-  m_LocalRotation: {x: -0.41486886, y: -0.0062806285, z: 0.0028637426, w: -0.90985507}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.83, y: 1.9499999, z: -2.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1059,6 +1060,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &358643735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358643732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 1
+  m_IgnoreTag: 
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MinimumDistanceFromTarget: 0.1
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0
+  m_CameraRadius: 0.1
+  m_Strategy: 1
+  m_MaximumEffort: 4
+  m_SmoothingTime: 0
+  m_Damping: 0
+  m_DampingWhenOccluded: 0
+  m_OptimalTargetDistance: 0
 --- !u!1 &365658541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1643,6 +1674,7 @@ MonoBehaviour:
   timerText: {fileID: 2018473407}
   scoreText: {fileID: 806096387}
   rankText: {fileID: 274017773}
+  hc: {fileID: 1127968447}
   maxSpikes: 30
   muscles:
   - {fileID: 1843757714}
@@ -1658,6 +1690,36 @@ MonoBehaviour:
   - {fileID: 913161618}
   - {fileID: 1852012322}
   - {fileID: 551774973}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
+  - {fileID: 115309461}
   - {fileID: 115309461}
   currentSpikes: 0
   score: 0
@@ -1993,6 +2055,17 @@ MonoBehaviour:
   m_AmplitudeGain: 0.5
   m_FrequencyGain: 0.01
   mNoiseOffsets: {x: -417.07434, y: 879.6051, z: -824.48145}
+--- !u!114 &1127968447 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4408910909479335640, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
+  m_PrefabInstance: {fileID: 2050665665}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de8a057e5f8448d47aaa5b96acdc4795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1156658693
 GameObject:
   m_ObjectHideFlags: 0
@@ -8199,7 +8272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4408910909479335640, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: TRitemOneName
-      value: 'Target: 20'
+      value: 'Target: Spike proteins'
       objectReference: {fileID: 0}
     - target: {fileID: 5134974019203399303, guid: 6b347f64697dc1c4881ac9256317bdd3, type: 3}
       propertyPath: m_IsActive
