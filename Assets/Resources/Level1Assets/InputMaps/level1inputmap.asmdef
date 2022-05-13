@@ -1,16 +1,12 @@
 {
-    "name": "Level1Scripts",
+    "name": "NewAssembly",
     "rootNamespace": "",
     "references": [
-        "Unity.TextMeshPro",
-        "Cinemachine",
-        "GlobalScripts",
-        "Unity.InputSystem",
-        "NewAssembly"
+        "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
-    "allowUnsafeCode": true,
+    "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
