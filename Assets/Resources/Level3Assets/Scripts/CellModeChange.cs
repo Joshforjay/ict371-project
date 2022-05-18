@@ -31,6 +31,7 @@ public class CellModeChange : MonoBehaviour
             if (Input.GetButtonDown("Fire2"))
             {
                 fireBullet();
+                //Debug.Log("Space preesed!\nCell Mode: Plasma Cell\nWrong mode, no bullet fired!");
             }
         }
 

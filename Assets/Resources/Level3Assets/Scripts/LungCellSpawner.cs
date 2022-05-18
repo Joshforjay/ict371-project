@@ -28,9 +28,13 @@ public class LungCellSpawner : MonoBehaviour
                 i--;
         }
 
+        string allNums = "";
+
         foreach (int j in hash)
         {
+            allNums += j + " ";
             GameObject infectedCell = Instantiate(infectLungParticle, vertices[j], Quaternion.identity);
         }
+        //Debug.Log("Indice values: " + allNums);
     }
 }

@@ -12,7 +12,10 @@ public class ILCCollision : MonoBehaviour
         {
             Destroy(collide.gameObject);
             Score.infectedCellsLeft--;
+            //Debug.Log("Colision detected! Cell mode: Killer memory cell" +
+                //"\nInfected Cells Left: " + Score.infectedCellsLeft);
         }
+
 
     }
 }
